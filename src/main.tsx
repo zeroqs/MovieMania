@@ -1,4 +1,4 @@
 import ReactDOM from 'react-dom/client'
-import { App } from './App'
+import { MainApp } from './MainApp'
 
-ReactDOM.createRoot(document.querySelector('#root')!).render(<App />)
+ReactDOM.createRoot(document.querySelector('#root')!).render(<MainApp />)

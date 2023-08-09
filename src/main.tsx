@@ -1,4 +1,9 @@
-import ReactDOM from 'react-dom/client'
-import { MainApp } from './MainApp'
+import './shared/styles/index.module.scss'
 
-ReactDOM.createRoot(document.querySelector('#root')!).render(<MainApp />)
+import ReactDOM from 'react-dom/client'
+
+import { App } from '@/app'
+
+const root = ReactDOM.createRoot(document.querySelector('#root')!)
+
+root.render(<App />)

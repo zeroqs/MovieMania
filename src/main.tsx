@@ -1,4 +1,4 @@
-import './shared/styles/index.module.scss'
+import './app/styles/index.scss'
 
 import ReactDOM from 'react-dom/client'
 

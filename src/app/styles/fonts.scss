@@ -1,0 +1,16 @@
+@mixin font($fontName, $fileName, $weight, $style) {
+  @font-face {
+    font-family: $fontName;
+    font-weight: #{$weight};
+    font-style: #{$style};
+    font-display: swap;
+    src: url('../../shared/assets/fonts/#{$fileName}.woff2') format('woff2'),
+    url('../../shared/assets/fonts/#{$fileName}.woff2') format('woff');
+  }
+}
+
+
+@include font('Roboto', 'Roboto-Light', '300', 'normal');
+@include font('Roboto', 'Roboto-Regular', '400', 'normal');
+@include font('Roboto', 'Roboto-Medium', '500', 'normal');
+@include font('Roboto', 'Roboto-Bold', '700', 'normal');

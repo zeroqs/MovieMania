@@ -5,7 +5,7 @@ import { ProviderProps } from '@/shared/types/types'
 const theme: ThemeConfig = {
   token: {
     colorPrimary: '#ad241b',
-    colorInfo: '#836fff',
+    colorInfo: '#fff',
     fontFamily: '"SF Pro Display", sans-serif',
     fontSize: 16,
   },

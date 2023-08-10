@@ -6,7 +6,7 @@ import { AppRouter, RouterWrapper } from './providers/RouterConfig'
 export const App = () => {
   return (
     <WrapperComposer
-      wrappers={[AntdWrapper, RouterWrapper]}
+      wrappers={[RouterWrapper, AntdWrapper]}
       render={() => <AppRouter />}
     />
   )

@@ -9,8 +9,13 @@ const theme: ThemeConfig = {
       colorBgBase: '#100f10',
       colorBgContainer: '#100f10',
       colorBgLayout: '#100f10',
+      itemMarginBlock: '40px',
+      itemHeight: 50,
+      borderRadiusLG: 40,
+      fontSize: 18,
     },
     Layout: {
+      colorText: '#fff',
       colorBgHeader: '#100f10',
     },
   },

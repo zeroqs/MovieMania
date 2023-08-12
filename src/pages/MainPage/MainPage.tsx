@@ -1,10 +1,12 @@
 import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
+  CalendarOutlined,
+  CompassOutlined,
+  HeartOutlined,
 } from '@ant-design/icons'
 import { Layout, Menu, MenuProps, theme } from 'antd'
 import React from 'react'
+
+import styles from './MainPage.module.scss'
 
 const { Header, Content, Footer, Sider } = Layout
 type MenuItem = Required<MenuProps>['items'][number]
@@ -24,9 +26,9 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem('Browse', '1', <VideoCameraOutlined />),
-  getItem('Watch list', '2', <UploadOutlined />),
-  getItem('Coming soon', '3', <UserOutlined />),
+  getItem('Browse', '1', <CompassOutlined />),
+  getItem('Watch list', '2', <HeartOutlined />),
+  getItem('Coming soon', '3', <CalendarOutlined />),
 ]
 
 const MainPage = () => {
@@ -41,8 +43,13 @@ const MainPage = () => {
         collapsedWidth="0"
         style={{ borderRight: '1px solid #161616' }}
       >
-        <div className="demo-logo-vertical">logo</div>
+        <div className={styles.logo}>
+          <h1>
+            Movie<h1 className={styles.lastWorld}>Mania</h1>
+          </h1>
+        </div>
         <Menu
+          className={styles.menu}
           theme="dark"
           defaultSelectedKeys={['1']}
           mode="inline"
@@ -50,7 +57,9 @@ const MainPage = () => {
         />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }} />
+        <Header style={{ padding: 0, background: colorBgContainer }}>
+          Header
+        </Header>
         <Content style={{ margin: '24px 16px 0' }}>
           <div
             style={{
@@ -62,9 +71,7 @@ const MainPage = () => {
             content
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>
-          Ant Design ©2023 Created by Ant UED
-        </Footer>
+        <Footer style={{ textAlign: 'center' }}>Footer</Footer>
       </Layout>
     </Layout>
   )

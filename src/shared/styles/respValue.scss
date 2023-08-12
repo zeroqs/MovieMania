@@ -1,0 +1,13 @@
+@use 'sass:math';
+
+
+@mixin respValue($property, $minSize, $maxSize, $minWidth: 375, $maxWidth: 1920) {
+  #{$property}: $minSize + px;
+
+  @media (min-width: #{$minWidth + px}) {
+    #{$property}: calcRespValue($minSize, $maxSize, $minWidth, $maxWidth);
+  }
+  @media (min-width: #{$maxWidth + px}) {
+    #{$property}: $maxSize + px;
+  }
+}

@@ -3,6 +3,17 @@ import { ConfigProvider, ThemeConfig } from 'antd'
 import { ProviderProps } from '@/shared/types/types'
 
 const theme: ThemeConfig = {
+  components: {
+    Menu: {
+      darkItemBg: '#100f10',
+      colorBgBase: '#100f10',
+      colorBgContainer: '#100f10',
+      colorBgLayout: '#100f10',
+    },
+    Layout: {
+      colorBgHeader: '#100f10',
+    },
+  },
   token: {
     colorPrimary: '#ad241b',
     colorInfo: '#fff',
@@ -10,6 +21,8 @@ const theme: ThemeConfig = {
     fontSize: 16,
     colorTextDescription: '#fff',
     colorTextHeading: '#fff',
+    colorBgLayout: '#100f10',
+    colorBgBase: '#141313',
   },
 }
 

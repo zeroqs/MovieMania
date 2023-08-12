@@ -4,28 +4,27 @@
 $base-color: #fff;
 $base-bg-color: #100f10;
 
+
 #root {
   position: relative;
   min-height: 100vh;
 }
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
   color: $base-color;
+
 }
 
 body {
   background-color: $base-bg-color;
   height: 100dvh;
-  
+
 }
 
 a {
   cursor: pointer;
-
   text-decoration: none;
-
   background-color: transparent;
-
   transition: color 0.2s ease;
 }

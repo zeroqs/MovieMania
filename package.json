@@ -7,8 +7,11 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint \"src/**/*.{js,mjs,cjs,ts,mts,jsx,tsx}\"",
+    "style": "stylelint \"src/**/*.scss\"",
     "preview": "vite preview",
-    "lint:fix": "eslint \"src/**/*.{js,mjs,cjs,ts,mts,jsx,tsx}\" --fix"
+    "lint:fix": "eslint \"src/**/*.{js,mjs,cjs,ts,mts,jsx,tsx}\" --fix",
+    "style:fix": "stylelint --fix \"**/*.scss\""
+
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -30,6 +33,10 @@
     "eslint-plugin-react-refresh": "^0.3.4",
     "prettier": "^3.0.0",
     "sass": "^1.64.2",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-order": "^6.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
   }

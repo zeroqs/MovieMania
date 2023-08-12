@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.error {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

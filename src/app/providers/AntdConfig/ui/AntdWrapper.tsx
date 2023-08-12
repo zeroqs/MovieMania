@@ -8,6 +8,8 @@ const theme: ThemeConfig = {
     colorInfo: '#fff',
     fontFamily: '"SF Pro Display", sans-serif',
     fontSize: 16,
+    colorTextDescription: '#fff',
+    colorTextHeading: '#fff',
   },
 }
 

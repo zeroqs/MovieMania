@@ -7,6 +7,9 @@
   ],
   "rules": {
     "selector-class-pattern": null,
+    "scss/at-mixin-pattern": null,
+    "font-family-no-duplicate-names": true,
+    "at-rule-empty-line-before": "always",
     "order/order": [
       "custom-properties",
       "declarations"

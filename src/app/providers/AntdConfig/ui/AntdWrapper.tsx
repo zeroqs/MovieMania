@@ -18,16 +18,24 @@ const theme: ThemeConfig = {
       colorText: '#fff',
       colorBgHeader: '#100f10',
     },
+    Input: {
+      colorBorder: '#545454',
+      colorText: '#545454',
+      colorTextPlaceholder: '#545454',
+    },
+    Button: {
+      boxShadow: 'none',
+    },
   },
   token: {
     colorPrimary: '#ad241b',
     colorInfo: '#fff',
-    fontFamily: '"SF Pro Display", sans-serif',
+    fontFamily: 'Roboto, sans-serif',
     fontSize: 16,
     colorTextDescription: '#fff',
     colorTextHeading: '#fff',
     colorBgLayout: '#100f10',
-    colorBgBase: '#141313',
+    colorBgBase: '#100f10',
   },
 }
 

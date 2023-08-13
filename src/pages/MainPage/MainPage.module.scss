@@ -1,4 +1,4 @@
-@import '@/shared/styles/respValue.scss';
+@import '@/shared/styles/respValue';
 
 
 .logo {
@@ -8,11 +8,15 @@
   h1 {
     display: inline;
     font-weight: 800;
+
+
     @include respValue('font-size', 20, 24);
 
-    .lastWorld {
-      color: #ad241b;
-    }
+
+  }
+
+  .lastWorld {
+    color: #ad241b;
   }
 }
 
@@ -23,6 +27,7 @@
 .menu {
   li {
     gap: 12px;
+
     @include respValue('font-size', 14, 18);
 
   }

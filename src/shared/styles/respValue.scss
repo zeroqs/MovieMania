@@ -5,8 +5,9 @@
   #{$property}: $minSize + px;
 
   @media (min-width: #{$minWidth + px}) {
-    #{$property}: calcRespValue($minSize, $maxSize, $minWidth, $maxWidth);
+    #{$property}: calcrespvalue($minSize, $maxSize, $minWidth, $maxWidth);
   }
+
   @media (min-width: #{$maxWidth + px}) {
     #{$property}: $maxSize + px;
   }

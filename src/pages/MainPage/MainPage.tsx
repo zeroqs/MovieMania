@@ -2,9 +2,15 @@ import {
   CalendarOutlined,
   CompassOutlined,
   HeartOutlined,
+  LeftOutlined,
+  SearchOutlined,
+  UserOutlined,
 } from '@ant-design/icons'
 import { Layout, Menu, MenuProps, theme } from 'antd'
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import { Avatar, Button, Input } from '@/shared/ui'
 
 import styles from './MainPage.module.scss'
 
@@ -44,9 +50,10 @@ const MainPage = () => {
         style={{ borderRight: '1px solid #161616' }}
       >
         <div className={styles.logo}>
-          <h1>
-            Movie<h1 className={styles.lastWorld}>Mania</h1>
-          </h1>
+          <Link to="/">
+            <h1>Movie</h1>
+            <h1 className={styles.lastWorld}>Mania</h1>
+          </Link>
         </div>
         <Menu
           className={styles.menu}
@@ -57,8 +64,30 @@ const MainPage = () => {
         />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
+        <Header
+          style={{ padding: 0, background: colorBgContainer, display: 'flex' }}
+        >
           Header
+          <div>
+            <Button type="default" leftItem={<LeftOutlined />} />
+          </div>
+          <div>
+            <Input
+              style={{ gap: '10px' }}
+              prefix={
+                <SearchOutlined
+                  style={{
+                    fontSize: 24,
+                    color: '#b6b5b5',
+                  }}
+                />
+              }
+              placeholder="Search everything"
+            />
+          </div>
+          <div>
+            <Avatar size={54} icon={<UserOutlined />} />
+          </div>
         </Header>
         <Content style={{ margin: '24px 16px 0' }}>
           <div

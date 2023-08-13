@@ -6,5 +6,15 @@
 
 .leftItem {
   padding: 5px 10px 5px 5px;
+}
+
+.default {
+  padding: 25px 15px;
+  border-color: #545454;
+  border-radius: 10px;
+
+  svg {
+    fill: #fff;
+  }
 
 }

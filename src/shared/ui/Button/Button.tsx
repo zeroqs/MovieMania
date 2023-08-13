@@ -19,6 +19,7 @@ export const Button = ({
 }: ButtonProps) => {
   const classes = classNames(className, styles.root, {
     [styles.leftItem]: leftItem,
+    [styles.default]: type === 'default',
   })
 
   return (

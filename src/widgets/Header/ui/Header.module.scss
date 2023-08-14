@@ -1,0 +1,22 @@
+.root {
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+
+  .leftSide {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex: 1 1 auto;
+  }
+
+  .rightSide {
+    display: flex;
+    gap: 20px;
+
+    &__input {
+      gap: 10px;
+      max-width: 500px;
+    }
+  }
+}

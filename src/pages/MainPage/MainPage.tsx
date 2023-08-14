@@ -1,21 +1,17 @@
 import {
   CalendarOutlined,
   CompassOutlined,
-  ControlOutlined,
   HeartOutlined,
-  LeftOutlined,
-  SearchOutlined,
-  UserOutlined,
 } from '@ant-design/icons'
 import { Layout, Menu, MenuProps, theme } from 'antd'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { Avatar, Button, Input } from '@/shared/ui'
+import { Header } from '@/widgets'
 
 import styles from './MainPage.module.scss'
 
-const { Header, Content, Footer, Sider } = Layout
+const { Content, Footer, Sider } = Layout
 type MenuItem = Required<MenuProps>['items'][number]
 
 function getItem(
@@ -65,52 +61,7 @@ const MainPage = () => {
         />
       </Sider>
       <Layout>
-        <Header
-          style={{
-            padding: '0 40px',
-            background: colorBgContainer,
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              gap: '40px',
-              alignItems: 'center',
-              flex: '1 1 auto',
-            }}
-          >
-            <div>
-              <Button type="default" leftItem={<LeftOutlined />} />
-            </div>
-            <Input
-              style={{ gap: '10px', maxWidth: '500px' }}
-              prefix={
-                <SearchOutlined
-                  style={{
-                    fontSize: 24,
-                    color: '#b6b5b5',
-                  }}
-                />
-              }
-              suffix={
-                <ControlOutlined
-                  style={{
-                    fontSize: 24,
-                    color: '#b6b5b5',
-                  }}
-                />
-              }
-              placeholder="Search everything"
-            />
-          </div>
-          <div style={{ display: 'flex', gap: '20px' }}>
-            <div>
-              <Avatar size={54} icon={<UserOutlined />} />
-            </div>
-          </div>
-        </Header>
+        <Header />
         <Content style={{ margin: '24px 16px 0' }}>
           <div
             style={{

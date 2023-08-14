@@ -5,7 +5,6 @@ const {
 
 module.exports = configure({
   allowDebug: process.env.NODE_ENV !== "production",
-
   presets: [
     presets.imports({
       sort: {
@@ -19,5 +18,20 @@ module.exports = configure({
     presets.prettier(),
     presets.typescript(),
     presets.react()
-  ]
+  ],
+  extend: {
+    rules: {
+      "conarti-fsd/layers-slices": ["error", {
+        allowTypeImports: true
+      }],
+      "conarti-fsd/absolute-relative": "error",
+      "conarti-fsd/public-api": "warn"
+    },
+    plugins: [
+      "conarti-fsd"
+    ],
+    extends: [
+      "plugin:conarti-fsd/recommended"
+    ]
+  }
 });

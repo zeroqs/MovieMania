@@ -11,7 +11,6 @@
     "preview": "vite preview",
     "lint:fix": "eslint \"src/**/*.{js,mjs,cjs,ts,mts,jsx,tsx}\" --fix",
     "style:fix": "stylelint --fix \"**/*.scss\""
-
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -30,6 +29,7 @@
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.45.0",
     "eslint-kit": "^10.3.0",
+    "eslint-plugin-conarti-fsd": "^0.0.39",
     "eslint-plugin-react-refresh": "^0.3.4",
     "prettier": "^3.0.0",
     "sass": "^1.64.2",

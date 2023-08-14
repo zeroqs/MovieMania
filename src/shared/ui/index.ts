@@ -1,3 +1,3 @@
-export { Avatar } from '@/shared/ui/Avatar/Avatar'
-export { Button } from '@/shared/ui/Button/Button'
-export { Input } from '@/shared/ui/Input/Input'
+export { Avatar } from './Avatar/Avatar'
+export { Button } from './Button/Button'
+export { Input } from './Input/Input'

@@ -1,6 +1,7 @@
 import {
   CalendarOutlined,
   CompassOutlined,
+  ControlOutlined,
   HeartOutlined,
   LeftOutlined,
   SearchOutlined,
@@ -83,20 +84,26 @@ const MainPage = () => {
             <div>
               <Button type="default" leftItem={<LeftOutlined />} />
             </div>
-            <div>
-              <Input
-                style={{ gap: '10px' }}
-                prefix={
-                  <SearchOutlined
-                    style={{
-                      fontSize: 24,
-                      color: '#b6b5b5',
-                    }}
-                  />
-                }
-                placeholder="Search everything"
-              />
-            </div>
+            <Input
+              style={{ gap: '10px', maxWidth: '500px' }}
+              prefix={
+                <SearchOutlined
+                  style={{
+                    fontSize: 24,
+                    color: '#b6b5b5',
+                  }}
+                />
+              }
+              suffix={
+                <ControlOutlined
+                  style={{
+                    fontSize: 24,
+                    color: '#b6b5b5',
+                  }}
+                />
+              }
+              placeholder="Search everything"
+            />
           </div>
           <div style={{ display: 'flex', gap: '20px' }}>
             <div>

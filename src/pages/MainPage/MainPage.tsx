@@ -65,28 +65,43 @@ const MainPage = () => {
       </Sider>
       <Layout>
         <Header
-          style={{ padding: 0, background: colorBgContainer, display: 'flex' }}
+          style={{
+            padding: '0 40px',
+            background: colorBgContainer,
+            display: 'flex',
+            alignItems: 'center',
+          }}
         >
-          Header
-          <div>
-            <Button type="default" leftItem={<LeftOutlined />} />
+          <div
+            style={{
+              display: 'flex',
+              gap: '40px',
+              alignItems: 'center',
+              flex: '1 1 auto',
+            }}
+          >
+            <div>
+              <Button type="default" leftItem={<LeftOutlined />} />
+            </div>
+            <div>
+              <Input
+                style={{ gap: '10px' }}
+                prefix={
+                  <SearchOutlined
+                    style={{
+                      fontSize: 24,
+                      color: '#b6b5b5',
+                    }}
+                  />
+                }
+                placeholder="Search everything"
+              />
+            </div>
           </div>
-          <div>
-            <Input
-              style={{ gap: '10px' }}
-              prefix={
-                <SearchOutlined
-                  style={{
-                    fontSize: 24,
-                    color: '#b6b5b5',
-                  }}
-                />
-              }
-              placeholder="Search everything"
-            />
-          </div>
-          <div>
-            <Avatar size={54} icon={<UserOutlined />} />
+          <div style={{ display: 'flex', gap: '20px' }}>
+            <div>
+              <Avatar size={54} icon={<UserOutlined />} />
+            </div>
           </div>
         </Header>
         <Content style={{ margin: '24px 16px 0' }}>

@@ -1,14 +1,40 @@
+.root {
+  position: relative;
+}
 
-.iconSize {
-  font-size: 28px;
+.filmPreview {
+  padding: 50px;
+  background-color: #070708;
+  border-radius: 20px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
-.content {
-  padding: 24px;
-  min-height: 360px;
+.title {
+  h1 {
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.layout {
-  min-height: 100dvh;
+.main {
+  max-width: 450px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rightSide {
+  width: 300px;
 }

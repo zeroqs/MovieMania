@@ -1,0 +1,36 @@
+@import '@/shared/styles/respValue';
+
+
+.root {
+  border-right: 1px solid #161616;
+}
+
+
+.logo {
+  padding: 20px;
+  text-align: center;
+
+  h1 {
+    display: inline;
+    font-weight: 800;
+
+
+    @include respValue('font-size', 20, 24);
+
+
+  }
+
+  .lastWorld {
+    color: #ad241b;
+  }
+}
+
+.menu {
+  li {
+    gap: 12px;
+
+    @include respValue('font-size', 14, 18);
+
+  }
+
+}

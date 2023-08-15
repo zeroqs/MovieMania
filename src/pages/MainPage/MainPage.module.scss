@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
 
 
@@ -27,6 +28,8 @@
 
 .main {
   max-width: 450px;
+
+
 }
 
 .footer {
@@ -37,4 +40,12 @@
 
 .rightSide {
   width: 300px;
+}
+
+.sliderItem {
+  img {
+    width: 100%;
+    border-radius: 20px;
+
+  }
 }

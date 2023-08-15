@@ -1,20 +1,10 @@
-import { Layout } from 'antd'
-
-import { Content, Footer } from '@/shared/ui'
-import { Header, Sider } from '@/widgets'
-
-import styles from './MainPage.module.scss'
+import { Content } from '@/shared/ui'
 
 const MainPage = () => {
   return (
-    <Layout className={styles.layout}>
-      <Sider />
-      <Layout>
-        <Header />
-        <Content>content</Content>
-        <Footer>Footer</Footer>
-      </Layout>
-    </Layout>
+    <>
+      <Content>content</Content>
+    </>
   )
 }
 

@@ -1,5 +1,11 @@
+import { Content } from '@/shared/ui'
+
 const AboutPage = () => {
-  return <>About Page</>
+  return (
+    <>
+      <Content>About Page</Content>
+    </>
+  )
 }
 
 // eslint-disable-next-line import/no-default-export

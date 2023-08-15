@@ -1,7 +1,7 @@
 import { Layout } from 'antd'
 
-import { Header, Sider } from '@/widgets'
 import { Content, Footer } from '@/shared/ui'
+import { Header, Sider } from '@/widgets'
 
 import styles from './MainPage.module.scss'
 

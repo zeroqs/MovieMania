@@ -21,6 +21,7 @@ module.exports = configure({
   ],
   extend: {
     rules: {
+      "import/order": "off",
       "conarti-fsd/layers-slices": ["error", {
         allowTypeImports: true
       }],

@@ -1,3 +1,5 @@
 export { Avatar } from './Avatar/Avatar'
 export { Button } from './Button/Button'
+export { Content } from './Content/Content'
+export { Footer } from './Footer/Footer'
 export { Input } from './Input/Input'

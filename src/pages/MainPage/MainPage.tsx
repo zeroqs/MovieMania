@@ -3,15 +3,16 @@ import {
   CompassOutlined,
   HeartOutlined,
 } from '@ant-design/icons'
-import { Layout, Menu, MenuProps, theme } from 'antd'
+import { Layout, Menu, MenuProps } from 'antd'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { Header } from '@/widgets'
+import { Content, Footer } from '@/shared/ui'
 
 import styles from './MainPage.module.scss'
 
-const { Content, Footer, Sider } = Layout
+const { Sider } = Layout
 type MenuItem = Required<MenuProps>['items'][number]
 
 function getItem(
@@ -35,10 +36,6 @@ const items: MenuItem[] = [
 ]
 
 const MainPage = () => {
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken()
-
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Sider
@@ -62,18 +59,8 @@ const MainPage = () => {
       </Sider>
       <Layout>
         <Header />
-        <Content style={{ margin: '24px 16px 0' }}>
-          <div
-            style={{
-              padding: 24,
-              minHeight: 360,
-              background: colorBgContainer,
-            }}
-          >
-            content
-          </div>
-        </Content>
-        <Footer style={{ textAlign: 'center' }}>Footer</Footer>
+        <Content>content</Content>
+        <Footer>Footer</Footer>
       </Layout>
     </Layout>
   )

@@ -75,7 +75,7 @@ export const FilmSlider = ({ className, movies }: FilmSliderProps) => {
           >
             {movies.map((item) => (
               <SwiperSlide key={item.id} className={styles.sliderItem}>
-                <img src={item.backdrop.previewUrl} alt="" />
+                <img src={item.backdrop.url} alt={item.name} />
               </SwiperSlide>
             ))}
           </Swiper>

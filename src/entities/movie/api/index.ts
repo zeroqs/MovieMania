@@ -3,7 +3,7 @@ import { baseApi } from '@/shared/api'
 import { FilmSliderResponse } from '../model/index'
 
 function getRandomInt(max: number) {
-  return Math.random() * (max - 1) + 1
+  return Math.floor(Math.random() * (max - 1) + 1)
 }
 
 const filmSliderApi = baseApi.injectEndpoints({

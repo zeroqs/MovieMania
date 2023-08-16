@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 30px;
 }
 
 .sliderItem {
@@ -22,7 +23,9 @@
 
 .title {
   h1 {
-    font-size: 34px;
+
+    @include respValue('font-size', 24, 34);
+
     font-weight: 600;
     letter-spacing: 1px;
   }
@@ -44,6 +47,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .rightSide {
@@ -68,6 +72,10 @@
     border-radius: 50%;
     right: -10px;
     position: absolute;
+  }
+
+  @media (width <= 900px) {
+    width: 100%;
   }
 }
 

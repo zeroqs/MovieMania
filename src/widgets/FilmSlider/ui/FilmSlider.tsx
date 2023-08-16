@@ -4,6 +4,7 @@ import { useState } from 'react'
 import SwiperType from 'swiper'
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react'
 
+import { IFilmSlider } from '@/entities/movie'
 import { Button } from '@/shared/ui'
 
 import { useSwiperNavigation } from '../lib/useSwiperNavigation'
@@ -11,51 +12,27 @@ import styles from './FilmSlider.module.scss'
 
 interface FilmSliderProps {
   className?: string
+  movies: IFilmSlider[]
 }
 
-const movies = [
-  {
-    title: '1+1',
-    year: 2011,
-    image: 'https://imagetmdb.com/t/p/original/bGksau9GGu0uJ8DJQ8DYc9JW5LM.jpg',
-    shortDescription:
-      'Аристократ на коляске нанимает в сиделки бывшего заключенного. Искрометная французская комедия с Омаром Си',
-  },
-  {
-    title: 'Джентльмены',
-    year: 2019,
-    image: 'https://imagetmdb.com/t/p/original/tintsaQ0WLzZsTMkTiqtMB3rfc8.jpg',
-    shortDescription:
-      'Наркобарон хочет уйти на покой, но криминальный мир не отпускает. Успешное возвращение Гая Ричи к корням',
-  },
-  {
-    title: 'Волк с Уолл-стрит',
-    year: 2013,
-    image: 'https://imagetmdb.com/t/p/original/7Nwnmyzrtd0FkcRyPqmdzTPppQa.jpg',
-    shortDescription:
-      'Восхождение циника-гедониста на бизнес-олимп 1980-х. Блистательный тандем Леонардо ДиКаприо и Мартина Скорсезе',
-  },
-  {
-    title: 'Гнев человеческий',
-    year: 2021,
-    image:
-      'https://avatars.mds.yandex.net/get-ott/1534341/2a0000017b0699c684cc6e9767efb6d4b678/orig',
-    shortDescription:
-      'Хмурый мужчина прикидывается инкассатором, чтобы выйти на грабителей. Гай Ричи и Джейсон Стэйтем снова вместе',
-  },
-]
-
 const SLIDER_OPTIONS: SwiperProps = {
-  slidesPerView: 2,
+  slidesPerView: 3,
   spaceBetween: 20,
   initialSlide: 2,
   centeredSlides: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 1.4,
+    },
+    1000: {
+      slidesPerView: 3,
+    },
+  },
 }
 
-export const FilmSlider = ({ className }: FilmSliderProps) => {
-  const [activeIndex, setActiveIndex] = useState(0)
+export const FilmSlider = ({ className, movies }: FilmSliderProps) => {
   const { onSwiper, nextBtnRef, prevBtnRef } = useSwiperNavigation()
-
+  const [activeIndex, setActiveIndex] = useState(0)
   const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.activeIndex)
   }
@@ -64,7 +41,7 @@ export const FilmSlider = ({ className }: FilmSliderProps) => {
   return (
     <div
       style={{
-        backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${movies[activeIndex]?.image}) `,
+        backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${movies[activeIndex].backdrop.url}) `,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'top center',
@@ -72,15 +49,15 @@ export const FilmSlider = ({ className }: FilmSliderProps) => {
       className={classes}
     >
       <header className={styles.title}>
-        <h1>{movies[activeIndex]?.title}</h1>
+        <h1>{movies[activeIndex].name}</h1>
         <div className={styles.filmDetails}>
           <span>7.8</span>
           <span>Жанры</span>
-          <span>{movies[activeIndex]?.year}</span>
+          <span>{movies[activeIndex].year}</span>
         </div>
       </header>
       <main className={styles.main}>
-        <span>{movies[activeIndex]?.shortDescription}</span>
+        <span>{movies[activeIndex].shortDescription}</span>
       </main>
       <footer className={styles.footer}>
         <div className={styles.leftSide}>
@@ -88,6 +65,7 @@ export const FilmSlider = ({ className }: FilmSliderProps) => {
             Details
           </Button>
         </div>
+
         <div className={styles.rightSide}>
           <Swiper
             onSwiper={onSwiper}
@@ -95,9 +73,9 @@ export const FilmSlider = ({ className }: FilmSliderProps) => {
             {...SLIDER_OPTIONS}
             className={styles.swiper}
           >
-            {movies.map((movie) => (
-              <SwiperSlide key={movie.title} className={styles.sliderItem}>
-                <img src={movie.image} alt="" />
+            {movies.map((item) => (
+              <SwiperSlide key={item.id} className={styles.sliderItem}>
+                <img src={item.backdrop.previewUrl} alt="" />
               </SwiperSlide>
             ))}
           </Swiper>

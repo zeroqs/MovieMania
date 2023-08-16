@@ -1,12 +1,13 @@
 import { Button as AntButton, ButtonProps as AntButtonProps } from 'antd'
 import classNames from 'classnames'
-import { ReactNode } from 'react'
+import { ReactNode, Ref } from 'react'
 
 import styles from './Button.module.scss'
 
 interface ButtonProps extends AntButtonProps {
   rightItem?: ReactNode
   leftItem?: ReactNode
+  buttonRef?: Ref<HTMLElement>
 }
 
 export const Button = ({
@@ -14,6 +15,7 @@ export const Button = ({
   leftItem,
   rightItem,
   children,
+  buttonRef,
   type = 'primary',
   ...otherProps
 }: ButtonProps) => {
@@ -21,9 +23,8 @@ export const Button = ({
     [styles.leftItem]: leftItem,
     [styles.default]: type === 'default',
   })
-
   return (
-    <AntButton className={classes} type={type} {...otherProps}>
+    <AntButton ref={buttonRef} className={classes} type={type} {...otherProps}>
       {leftItem}
       {children}
       {rightItem}

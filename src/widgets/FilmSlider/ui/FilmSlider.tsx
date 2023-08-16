@@ -1,11 +1,12 @@
+import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import classNames from 'classnames'
 import { useState } from 'react'
 import SwiperType from 'swiper'
-import { Navigation, Pagination } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react'
 
 import { Button } from '@/shared/ui'
 
+import { useSwiperNavigation } from '../lib/useSwiperNavigation'
 import styles from './FilmSlider.module.scss'
 
 interface FilmSliderProps {
@@ -44,8 +45,25 @@ const movies = [
   },
 ]
 
+const SLIDER_OPTIONS: SwiperProps = {
+  slidesPerView: 2,
+  spaceBetween: 20,
+  initialSlide: 2,
+  centeredSlides: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    1000: {
+      slidesPerView: 2,
+    },
+  },
+}
+
 export const FilmSlider = ({ className }: FilmSliderProps) => {
   const [activeIndex, setActiveIndex] = useState(0)
+  const { onSwiper, nextBtnRef, prevBtnRef } = useSwiperNavigation()
+
   const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.activeIndex)
   }
@@ -79,13 +97,9 @@ export const FilmSlider = ({ className }: FilmSliderProps) => {
         </div>
         <div className={styles.rightSide}>
           <Swiper
+            onSwiper={onSwiper}
             onSlideChange={handleSlideChange}
-            initialSlide={2}
-            centeredSlides
-            navigation
-            slidesPerView={2}
-            spaceBetween={20}
-            modules={[Pagination, Navigation]}
+            {...SLIDER_OPTIONS}
             className="mySwiper"
           >
             {movies.map((movie) => (
@@ -94,6 +108,12 @@ export const FilmSlider = ({ className }: FilmSliderProps) => {
               </SwiperSlide>
             ))}
           </Swiper>
+          <Button className={styles.prev} buttonRef={prevBtnRef}>
+            <LeftOutlined style={{ fontSize: 11 }} />
+          </Button>
+          <Button className={styles.next} buttonRef={nextBtnRef}>
+            <RightOutlined style={{ fontSize: 11 }} />
+          </Button>
         </div>
       </footer>
     </div>

@@ -1,5 +1,9 @@
+@import '@/shared/styles/respValue';
+
 .root {
-  padding: 50px;
+
+  @include respValue('padding', 20, 50);
+
   background-color: #070708;
   border-radius: 20px;
   min-height: 400px;
@@ -34,6 +38,7 @@
 
 }
 
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -65,4 +70,5 @@
     position: absolute;
   }
 }
+
 

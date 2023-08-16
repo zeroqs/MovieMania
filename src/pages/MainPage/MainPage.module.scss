@@ -1,4 +1,10 @@
 .root {
   position: relative;
+
+  @media (width <= 900px) {
+    padding: 24px 0;
+
+  }
+
 }
 

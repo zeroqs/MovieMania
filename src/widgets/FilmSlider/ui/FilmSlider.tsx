@@ -50,14 +50,6 @@ const SLIDER_OPTIONS: SwiperProps = {
   spaceBetween: 20,
   initialSlide: 2,
   centeredSlides: true,
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    1000: {
-      slidesPerView: 2,
-    },
-  },
 }
 
 export const FilmSlider = ({ className }: FilmSliderProps) => {
@@ -72,9 +64,10 @@ export const FilmSlider = ({ className }: FilmSliderProps) => {
   return (
     <div
       style={{
-        backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${movies[activeIndex]?.image})`,
+        backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${movies[activeIndex]?.image}) `,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'top center',
       }}
       className={classes}
     >
@@ -100,7 +93,7 @@ export const FilmSlider = ({ className }: FilmSliderProps) => {
             onSwiper={onSwiper}
             onSlideChange={handleSlideChange}
             {...SLIDER_OPTIONS}
-            className="mySwiper"
+            className={styles.swiper}
           >
             {movies.map((movie) => (
               <SwiperSlide key={movie.title} className={styles.sliderItem}>

@@ -1,14 +1,30 @@
 @use 'sass:math';
 
+@function calcRespValue($f-min, $f-max, $v-min, $v-max) {
+  $k: math.div($f-max - $f-min, $v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+
+  @return calc(#{$k} * 100vw + #{$b + px});
+}
 
 @mixin respValue($property, $minSize, $maxSize, $minWidth: 375, $maxWidth: 1920) {
   #{$property}: $minSize + px;
 
   @media (min-width: #{$minWidth + px}) {
-    #{$property}: calcrespvalue($minSize, $maxSize, $minWidth, $maxWidth);
+    #{$property}: calcRespValue($minSize, $maxSize, $minWidth, $maxWidth);
   }
-
   @media (min-width: #{$maxWidth + px}) {
     #{$property}: $maxSize + px;
+  }
+}
+
+@mixin resp2Value($property, $minSize1, $minSize2, $maxSize1, $maxSize2, $minWidth: 375, $maxWidth: 1920) {
+  #{$property}: $minSize1 + px $minSize2 + px;
+
+  @media (min-width: #{$minWidth + px}) {
+    #{$property}: calcRespValue($minSize1, $maxSize1, $minWidth, $maxWidth) calcRespValue($minSize2, $maxSize2, $minWidth, $maxWidth);
+  }
+  @media (min-width: #{$maxWidth + px}) {
+    #{$property}: $maxSize1 + px $maxSize2 + px;
   }
 }

@@ -7,7 +7,7 @@ import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react'
 import { IFilmSlider } from '@/entities/movie'
 import { Button } from '@/shared/ui'
 
-import { useSwiperNavigation } from '../lib/useSwiperNavigation'
+import { useSwiperNavigation } from '../../lib/useSwiperNavigation'
 import styles from './FilmSlider.module.scss'
 
 interface FilmSliderProps {

@@ -1,1 +1,1 @@
-export { FilmSlider } from './ui/FilmSlider'
+export { FilmsSlider } from './ui/FilmsSlider'

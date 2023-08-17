@@ -22,14 +22,6 @@
 }
 
 .title {
-  h1 {
-
-    @include respValue('font-size', 24, 34);
-
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -41,9 +33,16 @@
   }
 
   .filmDetails {
+    align-items: center;
     flex-wrap: wrap;
     display: flex;
     gap: 20px;
+
+    .filmRating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
   }
 }
 
@@ -60,6 +59,11 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+
+  .buttonDetails {
+    padding: 25px 30px;
+    border-radius: 25px;
+  }
 }
 
 .rightSide {

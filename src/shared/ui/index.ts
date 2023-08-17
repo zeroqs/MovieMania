@@ -1,5 +1,7 @@
 export { Avatar } from './Avatar/Avatar'
 export { Button } from './Button/Button'
 export { Content } from './Content/Content'
+export { FilmSliderLayout } from './FilmSliderLayout/FilmSliderLayout'
 export { Footer } from './Footer/Footer'
 export { Input } from './Input/Input'
+export { Typography } from './Typography/Typography'

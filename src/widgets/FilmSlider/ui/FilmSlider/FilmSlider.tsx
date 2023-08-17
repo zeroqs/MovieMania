@@ -4,7 +4,7 @@ import { useState } from 'react'
 import SwiperType from 'swiper'
 import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react'
 
-import { IFilmSlider } from '@/entities/movie'
+import { IFilmSlider } from '@/entities/FilmsSlider'
 import { Button } from '@/shared/ui'
 
 import { useSwiperNavigation } from '../../lib/useSwiperNavigation'
@@ -37,7 +37,6 @@ export const FilmSlider = ({ className, movies }: FilmSliderProps) => {
     setActiveIndex(swiper.activeIndex)
   }
   const classes = classNames(className, styles.root)
-
   return (
     <div
       style={{
@@ -51,9 +50,13 @@ export const FilmSlider = ({ className, movies }: FilmSliderProps) => {
       <header className={styles.title}>
         <h1>{movies[activeIndex].name}</h1>
         <div className={styles.filmDetails}>
-          <span>7.8</span>
-          <span>Жанры</span>
+          <span>{movies[activeIndex].rating.imdb}</span>
           <span>{movies[activeIndex].year}</span>
+        </div>
+        <div className={styles.genres}>
+          {movies[activeIndex].genres.slice(0, 3).map((item) => (
+            <span>{item.name}</span>
+          ))}
         </div>
       </header>
       <main className={styles.main}>

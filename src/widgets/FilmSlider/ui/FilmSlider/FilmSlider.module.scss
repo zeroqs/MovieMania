@@ -13,15 +13,15 @@
   gap: 30px;
 }
 
-.sliderItem {
-  img {
-    width: 100%;
-    border-radius: 20px;
-
-  }
-}
-
 .title {
+  h1 {
+
+    @include respValue('font-size', 24, 34);
+
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -33,6 +33,7 @@
   }
 
   .filmDetails {
+    text-align: center;
     align-items: center;
     flex-wrap: wrap;
     display: flex;
@@ -41,14 +42,14 @@
     .filmRating {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 10px;
     }
   }
 }
 
 .main {
   max-width: 450px;
-
+  height: 80px;
 
 }
 
@@ -70,25 +71,6 @@
   position: relative;
   width: 500px;
 
-  .prev {
-    border-radius: 50%;
-    position: absolute;
-    left: -10px;
-    padding: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-  }
-
-  .next {
-    transform: translateY(-50%);
-    z-index: 2;
-    top: 50%;
-    padding: 10px;
-    border-radius: 50%;
-    right: -10px;
-    position: absolute;
-  }
 
   @media (width <= 900px) {
     width: 100%;

@@ -1,0 +1,13 @@
+.root {
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+
+  .filmRating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

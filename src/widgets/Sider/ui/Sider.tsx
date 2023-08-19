@@ -1,9 +1,4 @@
-import {
-  CalendarOutlined,
-  CompassOutlined,
-  HeartOutlined,
-  HomeOutlined,
-} from '@ant-design/icons'
+import { CompassOutlined, HeartOutlined, HomeOutlined } from '@ant-design/icons'
 import { Layout, Menu, MenuProps, SiderProps as AntSiderProps } from 'antd'
 import classNames from 'classnames'
 import React from 'react'
@@ -32,10 +27,9 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem(<NavLink to="/">Home</NavLink>, '1', <HomeOutlined />),
-  getItem(<NavLink to="/about">Browse</NavLink>, '2', <CompassOutlined />),
-  getItem(<NavLink to="/list">Watch list</NavLink>, '3', <HeartOutlined />),
-  getItem('Coming soon', '4', <CalendarOutlined />),
+  getItem(<NavLink to="/">Главная</NavLink>, '1', <HomeOutlined />),
+  getItem(<NavLink to="/about">Список</NavLink>, '2', <CompassOutlined />),
+  getItem(<NavLink to="/list">Избранные</NavLink>, '3', <HeartOutlined />),
 ]
 
 export const Sider = ({ className }: SiderProps) => {

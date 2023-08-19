@@ -1,0 +1,11 @@
+.root {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+
+  span {
+    background: #ad241b;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}

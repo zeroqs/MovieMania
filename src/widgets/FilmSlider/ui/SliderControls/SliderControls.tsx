@@ -36,7 +36,6 @@ export const SliderControls = ({
   movies,
 }: SliderControlsProps) => {
   const { onSwiper, nextBtnRef, prevBtnRef } = useSwiperNavigation()
-
   const classes = classNames(className, styles.root)
 
   return (

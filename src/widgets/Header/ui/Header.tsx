@@ -38,7 +38,7 @@ export const Header = ({ className, ...otherProps }: HeaderProps) => {
         <Input
           className={styles.rightSide__input}
           prefix={prefix}
-          placeholder="Search everything"
+          placeholder="Найти"
         />
       </div>
       <div className={styles.rightSide}>

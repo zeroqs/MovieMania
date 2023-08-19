@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import SwiperType from 'swiper'
 
 import { IFilmSlider } from '@/entities/FilmsSlider'
@@ -47,7 +48,9 @@ export const FilmSlider = ({ className, movies }: FilmSliderProps) => {
       </main>
       <footer className={styles.footer}>
         <div className={styles.leftSide}>
-          <Button className={styles.buttonDetails}>Details</Button>
+          <NavLink to={`/movie/${movies[activeIndex].id}`}>
+            <Button className={styles.buttonDetails}>Details</Button>
+          </NavLink>
         </div>
         <SliderControls
           handleSlideChange={handleSlideChange}

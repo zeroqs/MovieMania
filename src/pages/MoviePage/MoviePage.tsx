@@ -1,5 +1,12 @@
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
+
 import { Col, Row } from 'antd'
 import classNames from 'classnames'
+// import required modules
+import { Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { Content, Genres, Typography } from '@/shared/ui'
 
@@ -24,21 +31,144 @@ const genres = [
   },
 ]
 
+const similarMovies = [
+  {
+    id: 32898,
+    name: 'Достучаться до небес',
+    enName: null,
+    alternativeName: "Knockin' on Heaven's Door",
+    type: 'movie',
+    poster: {
+      url: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/3fb781cd-2b98-4072-b102-311661121a2e/orig',
+      previewUrl:
+        'https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/3fb781cd-2b98-4072-b102-311661121a2e/x1000',
+    },
+  },
+  {
+    id: 84014,
+    name: '…А в душе я танцую',
+    enName: null,
+    alternativeName: "Inside I'm Dancing",
+    type: 'movie',
+    poster: {
+      url: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/3623db7c-3c94-4cff-841a-bb2f2d30b9ea/orig',
+      previewUrl:
+        'https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/3623db7c-3c94-4cff-841a-bb2f2d30b9ea/x1000',
+    },
+  },
+  {
+    id: 4871,
+    name: 'Запах женщины',
+    enName: null,
+    alternativeName: 'Scent of a Woman',
+    type: 'movie',
+    poster: {
+      url: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/378890fe-a68d-45ba-a87e-9108ae0e4574/orig',
+      previewUrl:
+        'https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/378890fe-a68d-45ba-a87e-9108ae0e4574/x1000',
+    },
+  },
+  {
+    id: 258885,
+    name: 'Пока не сыграл в ящик',
+    enName: null,
+    alternativeName: 'The Bucket List',
+    type: 'movie',
+    poster: {
+      url: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/7155a924-ac60-4a34-8b0f-56dff6a012f6/orig',
+      previewUrl:
+        'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/7155a924-ac60-4a34-8b0f-56dff6a012f6/x1000',
+    },
+  },
+  {
+    id: 519,
+    name: 'Человек дождя',
+    enName: null,
+    alternativeName: 'Rain Man',
+    type: 'movie',
+    poster: {
+      url: 'https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/74259ac0-8003-4282-b0c9-ffe915ccd6fb/orig',
+      previewUrl:
+        'https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/74259ac0-8003-4282-b0c9-ffe915ccd6fb/x1000',
+    },
+  },
+  {
+    id: 77435,
+    name: 'Скафандр и бабочка',
+    enName: null,
+    alternativeName: 'Le scaphandre et le papillon',
+    type: 'movie',
+    poster: {
+      url: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/2df74ce4-1542-41b5-a302-39aa7426e65c/orig',
+      previewUrl:
+        'https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/2df74ce4-1542-41b5-a302-39aa7426e65c/x1000',
+    },
+  },
+  {
+    id: 1108577,
+    name: 'Зеленая книга',
+    enName: null,
+    alternativeName: 'Green Book',
+    type: 'movie',
+    poster: {
+      url: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4b27e219-a8a5-4d85-9874-57d6016e0837/orig',
+      previewUrl:
+        'https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4b27e219-a8a5-4d85-9874-57d6016e0837/x1000',
+    },
+  },
+  {
+    id: 807318,
+    name: 'До встречи с тобой',
+    enName: null,
+    alternativeName: 'Me Before You',
+    type: 'movie',
+    poster: {
+      url: 'https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/833bf19b-d1e6-4ce2-80c8-eb5971e61ab0/orig',
+      previewUrl:
+        'https://avatars.mds.yandex.net/get-kinopoisk-image/4774061/833bf19b-d1e6-4ce2-80c8-eb5971e61ab0/x1000',
+    },
+  },
+  {
+    id: 462515,
+    name: 'Жизнь прекрасна',
+    enName: null,
+    alternativeName: '50/50',
+    type: 'movie',
+    poster: {
+      url: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/2b5e57a6-535f-4461-a534-6bb811d28233/orig',
+      previewUrl:
+        'https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/2b5e57a6-535f-4461-a534-6bb811d28233/x1000',
+    },
+  },
+  {
+    id: 2950,
+    name: 'Пробуждение',
+    enName: null,
+    alternativeName: 'Awakenings',
+    type: 'movie',
+    poster: {
+      url: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/42ad912d-cee7-45ad-b5f7-6a6df3ded047/orig',
+      previewUrl:
+        'https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/42ad912d-cee7-45ad-b5f7-6a6df3ded047/x1000',
+    },
+  },
+]
+
 const MoviePage = ({ className }: FilmPageProps) => {
   /*  const { movieId } = useParams()
-                                                                                                                                                    const { data } = useGetFilmQuery(Number(movieId))*/
+                                                                                                                                                                                                                                                const { data } = useGetFilmQuery(Number(movieId))*/
   const classes = classNames(className, styles.root)
   return (
     <Content className={classes}>
       <Row gutter={29}>
-        <Col xs={24} sm={12} md={12} lg={12} xl={9}>
+        <Col xs={24} sm={24} md={10} lg={8} xl={8}>
           <img
             src="https://st.kp.yandex.net/images/film_big/535341.jpg"
             className={styles.image}
             alt=""
           />
         </Col>
-        <Col xs={24} sm={12} md={12} lg={12} xl={15}>
+        <Col xs={24} sm={24} md={14} lg={13} xl={13}>
           <Typography className={styles.title} type="title">
             Название: <span className={styles.filmInfo}>1+1</span>
           </Typography>
@@ -68,6 +198,26 @@ const MoviePage = ({ className }: FilmPageProps) => {
           </Typography>
         </Col>
       </Row>
+      <Typography className={styles.title} type="title">
+        Похожее кино:
+        <div className={styles.similarMovies}>
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+          >
+            {similarMovies.map((item) => (
+              <SwiperSlide key={item.id}>
+                <img src={item.poster.url} alt="" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </Typography>
+      <Row />
     </Content>
   )
 }

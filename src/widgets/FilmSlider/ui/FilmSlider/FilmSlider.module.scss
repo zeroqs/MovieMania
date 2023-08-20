@@ -1,7 +1,6 @@
 @import '@/shared/styles/respValue';
 
 .root {
-
   @include respValue('padding', 20, 50);
 
   background-color: #070708;

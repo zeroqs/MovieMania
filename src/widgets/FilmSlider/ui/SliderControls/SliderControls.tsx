@@ -44,7 +44,6 @@ export const SliderControls = ({
         onSwiper={onSwiper}
         onSlideChange={handleSlideChange}
         {...SLIDER_OPTIONS}
-        className={styles.swiper}
       >
         {movies.map((item) => (
           <SwiperSlide key={item.id} className={styles.sliderItem}>

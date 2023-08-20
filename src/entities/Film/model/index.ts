@@ -21,7 +21,7 @@ interface Person {
   name: string
 }
 
-interface SimilarMovie {
+export interface SimilarMovie {
   id: number
   name: string
   poster: {

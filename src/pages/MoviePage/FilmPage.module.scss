@@ -10,23 +10,23 @@
     width: 480px;
     border-radius: 20px;
 
-    @media (width <= 1550px) {
+    @media (width <= 1710px) {
       width: 380px;
     }
 
-    @media (width <= 1290px) {
+    @media (width <= 1430px) {
       width: 340px;
     }
 
-    @media (width <= 710px) {
+    @media (width <= 1330px) {
       width: 290px;
     }
 
-    @media (width <= 600px) {
+    @media (width <= 1180px) {
       width: 250px;
     }
 
-    @media (width <= 575px) {
+    @media (width <= 768px) {
       width: 100%;
     }
 
@@ -55,5 +55,15 @@
 
   .genres {
     padding-top: 10px;
+  }
+
+  .similarMovies {
+    width: 100%;
+
+    img {
+      width: 100%;
+      border-radius: 20px;
+
+    }
   }
 }

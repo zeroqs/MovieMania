@@ -15,7 +15,7 @@ export const Typography = ({
   className,
   children,
   type = 'text',
-  titleLevel,
+  titleLevel = 1,
 }: TypographyProps) => {
   const classes = classNames(className, styles.root)
 

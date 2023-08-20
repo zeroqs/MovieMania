@@ -57,8 +57,26 @@
     padding-top: 10px;
   }
 
+  .similarMoviesTitle {
+
+    @include respValue('font-size', 25, 30);
+
+    color: #ad241b;
+
+  }
+
   .similarMovies {
+    position: relative;
     width: 100%;
+
+    @media (width <= 1431px) {
+      text-align: center;
+    }
+
+
+    h1 {
+      color: #fff;
+    }
 
     img {
       width: 100%;

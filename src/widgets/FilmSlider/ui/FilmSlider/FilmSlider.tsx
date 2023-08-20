@@ -9,10 +9,10 @@ import {
   FilmDetails,
   FilmSliderLayout,
   Genres,
+  SliderControls,
   Typography,
 } from '@/shared/ui'
 
-import { SliderControls } from '../SliderControls/SliderControls'
 import styles from './FilmSlider.module.scss'
 
 interface FilmSliderProps {

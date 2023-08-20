@@ -1,14 +1,12 @@
-// Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/pagination'
 
 import { Col, Row } from 'antd'
 import classNames from 'classnames'
-// import required modules
-import { Pagination } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { useState } from 'react'
+import SwiperType from 'swiper'
 
-import { Content, Genres, Typography } from '@/shared/ui'
+import { Content, Genres, SliderControls, Typography } from '@/shared/ui'
 
 /*import { useParams } from 'react-router-dom'
 
@@ -155,8 +153,12 @@ const similarMovies = [
 ]
 
 const MoviePage = ({ className }: FilmPageProps) => {
-  /*  const { movieId } = useParams()
-                                                                                                                                                                                                                                                const { data } = useGetFilmQuery(Number(movieId))*/
+  /*  const { movieId } = useParams()   const { data } = useGetFilmQuery(Number(movieId)) */
+  const [, setActiveIndex] = useState(0)
+  const handleSlideChange = (swiper: SwiperType) => {
+    setActiveIndex(swiper.activeIndex)
+  }
+
   const classes = classNames(className, styles.root)
   return (
     <Content className={classes}>
@@ -198,25 +200,14 @@ const MoviePage = ({ className }: FilmPageProps) => {
           </Typography>
         </Col>
       </Row>
-      <Typography className={styles.title} type="title">
+      <Typography className={styles.similarMoviesTitle} type="title">
         Похожее кино:
-        <div className={styles.similarMovies}>
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-          >
-            {similarMovies.map((item) => (
-              <SwiperSlide key={item.id}>
-                <img src={item.poster.url} alt="" />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
       </Typography>
+      <SliderControls
+        className={styles.similarMovies}
+        handleSlideChange={handleSlideChange}
+        similarMovies={similarMovies}
+      />
       <Row />
     </Content>
   )

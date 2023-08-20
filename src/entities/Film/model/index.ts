@@ -35,6 +35,10 @@ export interface Film {
   name: string
   description: string
   year: string
+  poster: {
+    url: string
+    previewUrl: string
+  }
   facts: Fact[]
   genres: Genre[]
   videos: {

@@ -11,8 +11,9 @@
   #{$property}: $minSize + px;
 
   @media (min-width: #{$minWidth + px}) {
-    #{$property}: calcRespValue($minSize, $maxSize, $minWidth, $maxWidth);
+    #{$property}: calcrespvalue($minSize, $maxSize, $minWidth, $maxWidth);
   }
+
   @media (min-width: #{$maxWidth + px}) {
     #{$property}: $maxSize + px;
   }
@@ -22,8 +23,9 @@
   #{$property}: $minSize1 + px $minSize2 + px;
 
   @media (min-width: #{$minWidth + px}) {
-    #{$property}: calcRespValue($minSize1, $maxSize1, $minWidth, $maxWidth) calcRespValue($minSize2, $maxSize2, $minWidth, $maxWidth);
+    #{$property}: calcrespvalue($minSize1, $maxSize1, $minWidth, $maxWidth) calcrespvalue($minSize2, $maxSize2, $minWidth, $maxWidth);
   }
+
   @media (min-width: #{$maxWidth + px}) {
     #{$property}: $maxSize1 + px $maxSize2 + px;
   }

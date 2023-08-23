@@ -5,6 +5,7 @@ import { Col, Row } from 'antd'
 import classNames from 'classnames'
 import { useState } from 'react'
 import SwiperType from 'swiper'
+import { SwiperProps, SwiperSlide } from 'swiper/react'
 
 import { Content, Genres, SliderControls, Typography } from '@/shared/ui'
 
@@ -152,9 +153,133 @@ const similarMovies = [
   },
 ]
 
+const persons = [
+  {
+    id: 71427,
+    photo: 'https://st.kp.yandex.net/images/actor_iphone/iphone360_71427.jpg',
+    name: 'Франсуа Клюзе',
+    enName: 'François Cluzet',
+    description: 'Philippe',
+    profession: 'актеры',
+    enProfession: 'actor',
+  },
+  {
+    id: 41644,
+    photo: 'https://st.kp.yandex.net/images/actor_iphone/iphone360_41644.jpg',
+    name: 'Омар Си',
+    enName: 'Omar Sy',
+    description: 'Driss',
+    profession: 'актеры',
+    enProfession: 'actor',
+  },
+  {
+    id: 57174,
+    photo: 'https://st.kp.yandex.net/images/actor_iphone/iphone360_57174.jpg',
+    name: 'Анн Ле Ни',
+    enName: 'Anne Le Ny',
+    description: 'Yvonne',
+    profession: 'актеры',
+    enProfession: 'actor',
+  },
+  {
+    id: 868557,
+    photo: 'https://st.kp.yandex.net/images/actor_iphone/iphone360_868557.jpg',
+    name: 'Одри Флеро',
+    enName: 'Audrey Fleurot',
+    description: 'Magalie',
+    profession: 'актеры',
+    enProfession: 'actor',
+  },
+  {
+    id: 541041,
+    photo: 'https://st.kp.yandex.net/images/actor_iphone/iphone360_541041.jpg',
+    name: 'Жозефин де Мо',
+    enName: 'Joséphine de Meaux',
+    description: 'La DRH société de courses',
+    profession: 'актеры',
+    enProfession: 'actor',
+  },
+  {
+    id: 445,
+    photo: 'https://st.kp.yandex.net/images/actor_iphone/iphone360_445.jpg',
+    name: 'Клотильд Молле',
+    enName: 'Clotilde Mollet',
+    description: 'Marcelle',
+    profession: 'актеры',
+    enProfession: 'actor',
+  },
+  {
+    id: 964574,
+    photo: 'https://st.kp.yandex.net/images/actor_iphone/iphone360_964574.jpg',
+    name: 'Альба Гайя Крагеде Беллуджи',
+    enName: 'Alba Gaïa Bellugi',
+    description: 'Elisa',
+    profession: 'актеры',
+    enProfession: 'actor',
+  },
+  {
+    id: 2237576,
+    photo: 'https://st.kp.yandex.net/images/actor_iphone/iphone360_2237576.jpg',
+    name: 'Сирил Менди',
+    enName: 'Cyril Mendy',
+    description: null,
+    profession: 'актеры',
+    enProfession: 'actor',
+  },
+  {
+    id: 3084679,
+    photo: 'https://st.kp.yandex.net/images/actor_iphone/iphone360_3084679.jpg',
+    name: 'Салимата Камате',
+    enName: 'Salimata Kamate',
+    description: 'Fatou',
+    profession: 'актеры',
+    enProfession: 'actor',
+  },
+  {
+    id: 3084680,
+    photo: 'https://st.kp.yandex.net/images/actor_iphone/iphone360_3084680.jpg',
+    name: 'Абса Дьяту Тур',
+    enName: 'Absa Diatou Toure',
+    description: null,
+    profession: 'актеры',
+    enProfession: 'actor',
+  },
+]
+
+const SLIDER_OPTIONS_MOVIE: SwiperProps = {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  initialSlide: 2,
+  centeredSlides: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 1.2,
+    },
+    650: {
+      slidesPerView: 2,
+    },
+    1330: {
+      slidesPerView: 3,
+    },
+    1400: {
+      slidesPerView: 5,
+    },
+  },
+}
+
 const MoviePage = ({ className }: FilmPageProps) => {
   /*  const { movieId } = useParams()   const { data } = useGetFilmQuery(Number(movieId)) */
   const [, setActiveIndex] = useState(0)
+  const renderItemsSimilarMovies = similarMovies.map((item) => (
+    <SwiperSlide key={item.id} className={styles.sliderItem}>
+      <img src={item.poster.url} alt={item.name} />
+    </SwiperSlide>
+  ))
+  const renderItemsPersons = persons.map((item) => (
+    <SwiperSlide key={item.id} className={styles.sliderItem}>
+      <img src={item.photo} alt={item.name} />
+    </SwiperSlide>
+  ))
   const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.activeIndex)
   }
@@ -198,6 +323,15 @@ const MoviePage = ({ className }: FilmPageProps) => {
             Жанры:{' '}
             <Genres className={styles.genres} showCount={3} genres={genres} />
           </Typography>
+          <Typography className={styles.title} type="title">
+            Актёры:{' '}
+            <SliderControls
+              className={styles.similarMovies}
+              handleSlideChange={handleSlideChange}
+              renderItems={renderItemsPersons}
+              sliderOptions={SLIDER_OPTIONS_MOVIE}
+            />
+          </Typography>
         </Col>
       </Row>
       <Typography className={styles.similarMoviesTitle} type="title">
@@ -206,7 +340,8 @@ const MoviePage = ({ className }: FilmPageProps) => {
       <SliderControls
         className={styles.similarMovies}
         handleSlideChange={handleSlideChange}
-        similarMovies={similarMovies}
+        renderItems={renderItemsSimilarMovies}
+        sliderOptions={SLIDER_OPTIONS_MOVIE}
       />
       <Row />
     </Content>

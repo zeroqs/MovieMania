@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import SwiperType from 'swiper'
+import { SwiperProps, SwiperSlide } from 'swiper/react'
 
 import { IFilmSlider } from '@/entities/FilmsSlider'
 import {
@@ -20,8 +21,27 @@ interface FilmSliderProps {
   movies: IFilmSlider[]
 }
 
+const SLIDER_OPTIONS: SwiperProps = {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  initialSlide: 2,
+  centeredSlides: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 1.4,
+    },
+    1000: {
+      slidesPerView: 3,
+    },
+  },
+}
 export const FilmSlider = ({ className, movies }: FilmSliderProps) => {
   const [activeIndex, setActiveIndex] = useState(0)
+  const renderItems = movies.map((item) => (
+    <SwiperSlide key={item.id} className={styles.sliderItem}>
+      <img src={item.backdrop.url} alt={item.name} />
+    </SwiperSlide>
+  ))
 
   const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.activeIndex)
@@ -53,8 +73,9 @@ export const FilmSlider = ({ className, movies }: FilmSliderProps) => {
           </NavLink>
         </div>
         <SliderControls
+          sliderOptions={SLIDER_OPTIONS}
           handleSlideChange={handleSlideChange}
-          movies={movies}
+          renderItems={renderItems}
           className={styles.rightSide}
         />
       </footer>

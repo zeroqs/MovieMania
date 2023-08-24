@@ -280,6 +280,7 @@ const MoviePage = ({ className }: FilmPageProps) => {
       <img src={item.photo} alt={item.name} />
     </SwiperSlide>
   ))
+  //TODO создать еще функцию для слайдера актеров
   const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.activeIndex)
   }

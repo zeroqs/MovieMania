@@ -32,10 +32,10 @@ const SLIDER_OPTIONS_MOVIE: SwiperProps = {
   centeredSlides: false,
   breakpoints: {
     0: {
-      slidesPerView: 1.2,
+      slidesPerView: 2.2,
     },
     650: {
-      slidesPerView: 2,
+      slidesPerView: 3,
     },
     1330: {
       slidesPerView: 3,
@@ -52,10 +52,10 @@ const SLIDER_OPTIONS_PERSONS: SwiperProps = {
   centeredSlides: false,
   breakpoints: {
     0: {
-      slidesPerView: 1.2,
+      slidesPerView: 2.2,
     },
     650: {
-      slidesPerView: 2,
+      slidesPerView: 3,
     },
     1330: {
       slidesPerView: 3,
@@ -111,6 +111,7 @@ const MoviePage = ({ className }: FilmPageProps) => {
   }
 
   const classes = classNames(className, styles.root)
+
   return (
     <>
       {isLoading && (
@@ -174,7 +175,7 @@ const MoviePage = ({ className }: FilmPageProps) => {
               </Typography>
             </Col>
           </Row>
-          <Row>
+          <Row className={styles.similarMoviesRow}>
             <Typography className={styles.similarMoviesTitle} type="title">
               Похожее кино:
             </Typography>
@@ -185,7 +186,7 @@ const MoviePage = ({ className }: FilmPageProps) => {
               sliderOptions={SLIDER_OPTIONS_MOVIE}
             />
           </Row>
-          <Row>
+          <Row className={styles.filmFactsRow}>
             <Typography className={styles.similarMoviesTitle} type="title">
               Факты о фильме:
             </Typography>

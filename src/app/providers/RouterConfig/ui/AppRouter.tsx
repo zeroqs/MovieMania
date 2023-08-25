@@ -1,7 +1,7 @@
 import { LoadingOutlined } from '@ant-design/icons'
 import { Layout, Spin } from 'antd'
-import { Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Suspense, useLayoutEffect } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
 
 import { Header, Sider } from '@/widgets'
 
@@ -10,6 +10,10 @@ import { routeConfig } from '../config/routeConfig'
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
 export const AppRouter = () => {
+  const location = useLocation()
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0)
+  }, [location.pathname, window.location])
   return (
     <Layout style={{ minHeight: '100dvh' }}>
       <Sider />

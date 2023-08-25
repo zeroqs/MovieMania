@@ -67,6 +67,7 @@
   }
 
   .similarMovies {
+    padding-top: 15px;
     position: relative;
     width: 100%;
 
@@ -101,6 +102,7 @@
   .filmFacts {
     li {
       padding: 10px;
+
       @include respValue('font-size', 16, 20);
 
       a {
@@ -122,6 +124,14 @@
     color: #ad241b;
     font-size: 20px;
 
+  }
+
+  .similarMoviesRow {
+    padding-top: 45px;
+  }
+
+  .filmFactsRow {
+    padding-top: 45px;
   }
 }
 

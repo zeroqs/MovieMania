@@ -7,7 +7,13 @@ import { useState } from 'react'
 import SwiperType from 'swiper'
 import { SwiperProps, SwiperSlide } from 'swiper/react'
 
-import { Content, Genres, SliderControls, Typography } from '@/shared/ui'
+import {
+  Button,
+  Content,
+  Genres,
+  SliderControls,
+  Typography,
+} from '@/shared/ui'
 
 /*import { useParams } from 'react-router-dom'
 
@@ -249,8 +255,28 @@ const persons = [
 const SLIDER_OPTIONS_MOVIE: SwiperProps = {
   slidesPerView: 3,
   spaceBetween: 20,
-  initialSlide: 2,
-  centeredSlides: true,
+  initialSlide: 3,
+  centeredSlides: false,
+  breakpoints: {
+    0: {
+      slidesPerView: 1.2,
+    },
+    650: {
+      slidesPerView: 2,
+    },
+    1330: {
+      slidesPerView: 3,
+    },
+    1400: {
+      slidesPerView: 6,
+    },
+  },
+}
+const SLIDER_OPTIONS_PERSONS: SwiperProps = {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  initialSlide: 0,
+  centeredSlides: false,
   breakpoints: {
     0: {
       slidesPerView: 1.2,
@@ -267,9 +293,61 @@ const SLIDER_OPTIONS_MOVIE: SwiperProps = {
   },
 }
 
+const filmFacts = [
+  {
+    value:
+      'На создание картины режиссёрский дуэт вдохновила увиденная ими в 2004 году документальная лента, в которой рассказывалось о том, как молодой житель предместья был нанят присматривать за парализованным инвалидом <a href="/name/3152842/" class="all">Филиппом Поццо ди Борго</a>, который остался парализованным после несчастного случая 27 июля 1993 года.',
+    type: 'FACT',
+    spoiler: false,
+  },
+  {
+    value:
+      'Первоначальным выбором на роль <a href="/name/3152842/" class="all">Филиппа Поццо ди Борго</a> был <a href="/name/11670/" class="all">Даниель Отой</a>.',
+    type: 'FACT',
+    spoiler: false,
+  },
+  {
+    value:
+      'Несмотря на то, что ему пришлось играть совершенно обычного человека, <a href="/name/41644/" class="all">Омар Си</a> сбросил при подготовке к съёмкам почти пять килограммов веса. Актёр посчитал, что стандартный житель предместья с такой предысторией должен обладать более атлетическим телосложением.',
+    type: 'FACT',
+    spoiler: false,
+  },
+  {
+    value:
+      'Перед началом работы над проектом режиссёры <a href="/name/382906/" class="all">Оливье Накаш</a> и <a href="/name/426346/" class="all">Эрик Толедано</a> лично посетили живущего в Марокко <a href="/name/3152842/" class="all">Филиппа Поццо ди Борго</a>. Знакомство с ним и произнесенная им речь многократно увеличили их желание поставить фильм на основе его истории. Сам <a href="/name/3152842/" class="all">Филипп Поццо ди Борго</a> дал им огромное количество информации и советов практически по каждой сцене картины.',
+    type: 'FACT',
+    spoiler: false,
+  },
+  {
+    value:
+      'На том, чтобы в первую очередь сделать фильм комедией, а не драмой усиленно настаивал сам <a href="/name/3152842/" class="all">Филипп Поццо ди Борго</a>. Он не хотел, чтобы основанный на его жизни фильм стал историей сострадания и жалости.',
+    type: 'FACT',
+    spoiler: false,
+  },
+  {
+    value:
+      '<a href="/name/41644/" class="all">Омар Си</a> был приглашён сыграть в фильме ещё до того, как был написан сценарий.',
+    type: 'FACT',
+    spoiler: false,
+  },
+  {
+    value:
+      'Когда Дрисс и Филипп были в галерее, то у Дрисса провод от наушников сначала был с правой стороны, а в следующем кадре с левой.',
+    type: 'BLOOPER',
+    spoiler: true,
+  },
+  {
+    value:
+      'В сцене, когда главные герои находятся в картинной галерее, Филипп просит конфету. Дрис протягивает руку с зеленой конфетой, а в следующем кадре он кладет Филиппу в рот уже желтую.',
+    type: 'BLOOPER',
+    spoiler: true,
+  },
+]
+
 const MoviePage = ({ className }: FilmPageProps) => {
   /*  const { movieId } = useParams()   const { data } = useGetFilmQuery(Number(movieId)) */
   const [, setActiveIndex] = useState(0)
+  const [showMore, setShowMore] = useState(false)
   const renderItemsSimilarMovies = similarMovies.map((item) => (
     <SwiperSlide key={item.id} className={styles.sliderItem}>
       <img src={item.poster.url} alt={item.name} />
@@ -280,6 +358,18 @@ const MoviePage = ({ className }: FilmPageProps) => {
       <img src={item.photo} alt={item.name} />
     </SwiperSlide>
   ))
+  const facts = showMore
+    ? filmFacts.map((item) => (
+        <li key={item.value} dangerouslySetInnerHTML={{ __html: item.value }} />
+      ))
+    : filmFacts
+        .slice(0, 4)
+        .map((item) => (
+          <li
+            key={item.value}
+            dangerouslySetInnerHTML={{ __html: item.value }}
+          />
+        ))
   //TODO создать еще функцию для слайдера актеров
   const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.activeIndex)
@@ -330,21 +420,37 @@ const MoviePage = ({ className }: FilmPageProps) => {
               className={styles.similarMovies}
               handleSlideChange={handleSlideChange}
               renderItems={renderItemsPersons}
-              sliderOptions={SLIDER_OPTIONS_MOVIE}
+              sliderOptions={SLIDER_OPTIONS_PERSONS}
             />
           </Typography>
         </Col>
       </Row>
-      <Typography className={styles.similarMoviesTitle} type="title">
-        Похожее кино:
-      </Typography>
-      <SliderControls
-        className={styles.similarMovies}
-        handleSlideChange={handleSlideChange}
-        renderItems={renderItemsSimilarMovies}
-        sliderOptions={SLIDER_OPTIONS_MOVIE}
-      />
-      <Row />
+      <Row>
+        <Typography className={styles.similarMoviesTitle} type="title">
+          Похожее кино:
+        </Typography>
+        <SliderControls
+          className={styles.similarMovies}
+          handleSlideChange={handleSlideChange}
+          renderItems={renderItemsSimilarMovies}
+          sliderOptions={SLIDER_OPTIONS_MOVIE}
+        />
+      </Row>
+      <Row>
+        <Typography className={styles.similarMoviesTitle} type="title">
+          Факты о фильме:
+        </Typography>
+        <div className={styles.filmFacts}>
+          <ul>{facts}</ul>
+        </div>
+        <Button
+          className={styles.showMoreButton}
+          type="link"
+          onClick={() => setShowMore(!showMore)}
+        >
+          {showMore ? 'Скрыть' : 'Показать больше'}
+        </Button>
+      </Row>
     </Content>
   )
 }

@@ -25,7 +25,7 @@ const SLIDER_OPTIONS: SwiperProps = {
   slidesPerView: 3,
   spaceBetween: 20,
   initialSlide: 2,
-  centeredSlides: true,
+  centeredSlides: false,
   breakpoints: {
     0: {
       slidesPerView: 1.4,

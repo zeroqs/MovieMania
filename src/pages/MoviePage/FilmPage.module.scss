@@ -85,12 +85,39 @@
 
     }
   }
-}
 
-.sliderItem {
-  img {
-    width: 100%;
-    border-radius: 20px;
+  .sliderItem {
+    img {
+      width: 100%;
+      border-radius: 20px;
+
+    }
+  }
+
+  .filmFacts {
+    li {
+      padding: 10px;
+      @include respValue('font-size', 16, 20);
+
+      a {
+        color: #ad241b;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    li:not(:first-child) {
+      border-top: 2px solid #545454;
+    }
+  }
+
+  .showMoreButton {
+    color: #ad241b;
+    font-size: 20px;
 
   }
 }
+

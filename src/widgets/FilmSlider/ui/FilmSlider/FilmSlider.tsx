@@ -10,6 +10,7 @@ import {
   FilmDetails,
   FilmSliderLayout,
   Genres,
+  Image,
   SliderControls,
   Typography,
 } from '@/shared/ui'
@@ -39,7 +40,7 @@ export const FilmSlider = ({ className, movies }: FilmSliderProps) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const renderItems = movies.map((item) => (
     <SwiperSlide key={item.id} className={styles.sliderItem}>
-      <img src={item.backdrop.url} alt={item.name} />
+      <Image src={item.backdrop.url} alt={item.name} skeletonWidth={100} />
     </SwiperSlide>
   ))
 

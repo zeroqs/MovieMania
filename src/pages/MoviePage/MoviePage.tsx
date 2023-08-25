@@ -11,6 +11,7 @@ import {
   Button,
   Content,
   Genres,
+  Image,
   SliderControls,
   Typography,
 } from '@/shared/ui'
@@ -350,12 +351,22 @@ const MoviePage = ({ className }: FilmPageProps) => {
   const [showMore, setShowMore] = useState(false)
   const renderItemsSimilarMovies = similarMovies.map((item) => (
     <SwiperSlide key={item.id} className={styles.sliderItem}>
-      <img src={item.poster.url} alt={item.name} />
+      <Image
+        skeletonWidth={300}
+        skeletonHeight={400}
+        src={item.poster.url}
+        alt={item.name}
+      />
     </SwiperSlide>
   ))
   const renderItemsPersons = persons.map((item) => (
     <SwiperSlide key={item.id} className={styles.sliderItem}>
-      <img src={item.photo} alt={item.name} />
+      <Image
+        skeletonWidth={200}
+        skeletonHeight={300}
+        src={item.photo}
+        alt={item.name}
+      />
     </SwiperSlide>
   ))
   const facts = showMore
@@ -380,10 +391,12 @@ const MoviePage = ({ className }: FilmPageProps) => {
     <Content className={classes}>
       <Row gutter={29}>
         <Col xs={24} sm={24} md={10} lg={8} xl={8}>
-          <img
-            src="https://st.kp.yandex.net/images/film_big/535341.jpg"
+          <Image
+            skeletonWidth={500}
+            skeletonHeight={600}
+            alt="test"
             className={styles.image}
-            alt=""
+            src="https://st.kp.yandex.net/images/film_big/535341.jpg"
           />
         </Col>
         <Col xs={24} sm={24} md={14} lg={13} xl={13}>

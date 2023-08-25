@@ -13,7 +13,7 @@ export const AppRouter = () => {
   const location = useLocation()
   useLayoutEffect(() => {
     document.documentElement.scrollTo(0, 0)
-  }, [location.pathname, window.location])
+  }, [location.pathname])
   return (
     <Layout style={{ minHeight: '100dvh' }}>
       <Sider />

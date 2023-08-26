@@ -24,6 +24,10 @@
     "swiper": "^10.1.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.2",
+    "@testing-library/react": "^14.0.0",
+    "vitest": "^0.34.3",
+    "jsdom": "^22.1.0",
     "@types/node": "^20.4.9",
     "@types/qs": "^6.9.7",
     "@types/react": "^18.0.37",

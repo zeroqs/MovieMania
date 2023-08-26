@@ -8,6 +8,7 @@
       "DOM.Iterable"
     ],
     "module": "ESNext",
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "skipLibCheck": true,
     /* Bundler mode */
     "moduleResolution": "bundler",

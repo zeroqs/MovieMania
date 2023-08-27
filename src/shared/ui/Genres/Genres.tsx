@@ -13,6 +13,7 @@ interface GenresProps {
   showCount: number
   forSlider?: boolean
   activeIndex?: number
+  dataId?: string
 }
 
 export const Genres = ({
@@ -22,12 +23,13 @@ export const Genres = ({
   forSlider = false,
   activeIndex,
   genres,
+  dataId,
 }: GenresProps) => {
   const classes = classNames(className, styles.root)
 
   if (forSlider)
     return (
-      <div className={classes}>
+      <div data-testid={dataId} className={classes}>
         {movies![activeIndex!].genres.slice(0, showCount).map((item) => (
           <Typography key={item.name}>{item.name}</Typography>
         ))}
@@ -35,7 +37,7 @@ export const Genres = ({
     )
 
   return (
-    <div className={classes}>
+    <div data-testid={dataId} className={classes}>
       {genres!.slice(0, showCount).map((item) => (
         <Typography key={item.name}>{item.name}</Typography>
       ))}

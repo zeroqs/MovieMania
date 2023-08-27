@@ -21,11 +21,13 @@ export const Typography = ({
 
   if (type === 'text')
     return (
-      <antTypography.Text className={classes}>{children}</antTypography.Text>
+      <antTypography.Text role="text" className={classes}>
+        {children}
+      </antTypography.Text>
     )
 
   return (
-    <antTypography.Title className={classes} level={titleLevel}>
+    <antTypography.Title role="title" className={classes} level={titleLevel}>
       {children}
     </antTypography.Title>
   )

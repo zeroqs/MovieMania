@@ -5,10 +5,15 @@ import styles from './Footer.module.scss'
 
 interface FooterProps extends LayoutProps {
   className?: string
+  dataId?: string
 }
 
-export const Footer = ({ className, children }: FooterProps) => {
+export const Footer = ({ className, children, dataId }: FooterProps) => {
   const classes = classNames(className, styles.root)
 
-  return <Layout.Footer className={classes}>{children}</Layout.Footer>
+  return (
+    <Layout.Footer data-testid={dataId} className={classes}>
+      {children}
+    </Layout.Footer>
+  )
 }

@@ -8,6 +8,7 @@ interface FilmSliderLayoutProps {
   children?: ReactNode
   bgImage: string
   onLoadLayout: () => void
+  dataId?: string
 }
 
 export const FilmSliderLayout = ({
@@ -15,6 +16,7 @@ export const FilmSliderLayout = ({
   children,
   bgImage,
   onLoadLayout,
+  dataId,
 }: FilmSliderLayoutProps) => {
   const classes = classNames(className, styles.root)
 
@@ -27,6 +29,7 @@ export const FilmSliderLayout = ({
   return (
     <>
       <div
+        data-testid={dataId}
         style={{
           backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${bgImage}) `,
         }}

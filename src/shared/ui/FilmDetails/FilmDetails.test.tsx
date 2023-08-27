@@ -1,10 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import { describe, expect, test } from 'vitest'
 
 import { FilmDetails } from './FilmDetails'
 
-export const FilmDetailsDefaultId = 'defaultDetails-component'
-export const FilmDetailsSliderId = 'sliderDetails-component'
+const FilmDetailsDefaultId = 'defaultDetails-component'
+const FilmDetailsSliderId = 'sliderDetails-component'
 
 describe('FilmDetails', () => {
   test('render FilmDetails by default', () => {

@@ -11,13 +11,10 @@
     "preview": "vite preview",
     "lint:fix": "eslint \"src/**/*.{js,mjs,cjs,ts,mts,jsx,tsx}\" --fix",
     "style:fix": "stylelint --fix \"**/*.scss\"",
-    "test": "vitest",
-    "test:ui": "vitest --ui"
+    "test": "vitest"
   },
   "dependencies": {
-    "-": "^0.0.1",
     "@reduxjs/toolkit": "^1.9.5",
-    "@testing-library/user-event": "^14.4.3",
     "antd": "^5.8.2",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
@@ -28,6 +25,7 @@
     "swiper": "^10.1.0"
   },
   "devDependencies": {
+    "@testing-library/user-event": "^14.4.3",
     "@testing-library/jest-dom": "^6.1.2",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.4",

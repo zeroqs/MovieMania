@@ -2,7 +2,6 @@ import { HomeOutlined } from '@ant-design/icons'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { createRef } from 'react'
-import { expect } from 'vitest'
 
 import { Button } from './Button'
 

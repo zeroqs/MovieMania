@@ -8,6 +8,7 @@ interface ButtonProps extends AntButtonProps {
   rightItem?: ReactNode
   leftItem?: ReactNode
   buttonRef?: Ref<HTMLElement>
+  dataId?: string
 }
 
 export const Button = ({
@@ -17,6 +18,7 @@ export const Button = ({
   children,
   buttonRef,
   type = 'primary',
+  dataId,
   ...otherProps
 }: ButtonProps) => {
   const classes = classNames(className, styles.root, {
@@ -24,7 +26,14 @@ export const Button = ({
     [styles.default]: type === 'default',
   })
   return (
-    <AntButton ref={buttonRef} className={classes} type={type} {...otherProps}>
+    <AntButton
+      data-testid={dataId}
+      role="button"
+      ref={buttonRef}
+      className={classes}
+      type={type}
+      {...otherProps}
+    >
       {leftItem}
       {children}
       {rightItem}

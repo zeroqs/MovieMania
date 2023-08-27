@@ -5,6 +5,7 @@ import { IFilmSlider } from '@/entities/FilmsSlider'
 
 import { Typography } from '../Typography/Typography'
 import styles from './FilmDetails.module.scss'
+import { FilmDetailsDefaultId, FilmDetailsSliderId } from './FilmDetails.spec'
 
 interface FilmDetailsProps {
   className?: string
@@ -27,7 +28,7 @@ export const FilmDetails = ({
 
   if (forSlider)
     return (
-      <div className={classes}>
+      <div className={classes} data-testid={FilmDetailsSliderId}>
         <span className={styles.filmRating}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +52,7 @@ export const FilmDetails = ({
     )
 
   return (
-    <div className={classes}>
+    <div className={classes} data-testid={FilmDetailsDefaultId}>
       <span className={styles.filmRating}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

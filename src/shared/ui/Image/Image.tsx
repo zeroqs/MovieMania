@@ -10,6 +10,7 @@ interface ImageProps {
   alt: string
   skeletonHeight?: number
   skeletonWidth?: number
+  dataId?: string
 }
 
 export const Image = ({
@@ -18,6 +19,7 @@ export const Image = ({
   alt,
   skeletonHeight,
   skeletonWidth,
+  dataId,
 }: ImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const classes = classNames(className, styles.root, {
@@ -31,13 +33,24 @@ export const Image = ({
   return (
     <>
       <div>
-        <img className={classes} src={src} alt={alt} onLoad={handlerIsLoaded} />
+        <img
+          data-testid={dataId}
+          className={classes}
+          src={src}
+          alt={alt}
+          onLoad={handlerIsLoaded}
+        />
       </div>
       {!isLoaded && (
-        <Skeleton.Image
-          style={{ height: `${skeletonHeight}px`, width: `${skeletonWidth}px` }}
-          active={!isLoaded}
-        />
+        <div data-testid="img-loading">
+          <Skeleton.Image
+            style={{
+              height: `${skeletonHeight}px`,
+              width: `${skeletonWidth}px`,
+            }}
+            active={!isLoaded}
+          />
+        </div>
       )}
     </>
   )

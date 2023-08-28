@@ -7,8 +7,8 @@ interface InputProps extends AntInputProps {
   className?: string
 }
 
-export const Input = ({ className, children, ...otherProps }: InputProps) => {
+export const Input = ({ className, ...otherProps }: InputProps) => {
   const classes = classNames(className, styles.root)
 
-  return <AntInput className={classes} {...otherProps} />
+  return <AntInput role="input" className={classes} {...otherProps} />
 }

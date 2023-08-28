@@ -14,18 +14,17 @@ export class ErrorBoundary extends React.Component<
   ErrorBoundaryProps,
   ErrorBoundaryState
 > {
-  constructor(props: ErrorBoundaryProps) {
-    super(props)
-    this.state = { hasError: false }
-  }
-
   static getDerivedStateFromError() {
-    // Update state so the next render will show the fallback UI.
     return { hasError: true }
   }
 
+  constructor(props: ErrorBoundaryProps) {
+    super(props)
+    // eslint-disable-next-line react/state-in-constructor
+    this.state = { hasError: false }
+  }
+
   componentDidCatch(error: Error, info: ErrorInfo) {
-    // You can also log the error to an error reporting service
     console.error(error, info)
   }
 
@@ -48,6 +47,7 @@ export class ErrorBoundary extends React.Component<
       )
     }
 
+    // eslint-disable-next-line react/destructuring-assignment
     return this.props.children
   }
 }

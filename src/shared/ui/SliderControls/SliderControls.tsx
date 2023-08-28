@@ -4,9 +4,8 @@ import { ReactNode } from 'react'
 import SwiperType from 'swiper'
 import { Swiper, SwiperProps } from 'swiper/react'
 
-import { Button } from '@/shared/ui'
-
 import { useSwiperNavigation } from '../../lib/useSwiperNavigation'
+import { Button } from '../Button/Button'
 import styles from './SliderControls.module.scss'
 
 interface SliderControlsProps {

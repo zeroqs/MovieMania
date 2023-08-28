@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint \"src/**/*.{js,mjs,cjs,ts,mts,jsx,tsx}\"",
-    "style": "stylelint \"src/**/*.scss\"",
     "preview": "vite preview",
+    "lint": "eslint \"src/**/*.{js,mjs,cjs,ts,mts,jsx,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,mjs,cjs,ts,mts,jsx,tsx}\" --fix",
+    "style": "stylelint \"**/*.scss\"",
     "style:fix": "stylelint --fix \"**/*.scss\"",
     "test": "vitest"
   },
@@ -25,9 +25,9 @@
     "swiper": "^10.1.0"
   },
   "devDependencies": {
-    "@testing-library/user-event": "^14.4.3",
     "@testing-library/jest-dom": "^6.1.2",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.5.4",
     "@types/node": "^20.4.9",
     "@types/qs": "^6.9.7",
@@ -44,6 +44,7 @@
     "prettier": "^3.0.0",
     "sass": "^1.64.2",
     "stylelint": "^15.10.2",
+    "stylelint-config-recommended-scss": "^12.0.0",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-config-standard-scss": "^10.0.0",
     "stylelint-order": "^6.0.3",

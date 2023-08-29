@@ -1,0 +1,42 @@
+@import '@/shared/styles/respValue';
+
+.title {
+  padding-top: 15px;
+
+  @include respValue('font-size', 25, 30);
+
+  color: #ad241b !important;
+}
+
+.similarMovies {
+  padding-top: 15px;
+  position: relative;
+  width: 100%;
+
+  @media (width <= 1431px) {
+    text-align: center;
+  }
+
+
+  h1 {
+    color: #fff;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 20px;
+
+  }
+}
+
+.sliderItem {
+  img {
+    width: 100%;
+    border-radius: 20px;
+
+  }
+
+  .imageHover {
+    cursor: pointer;
+  }
+}

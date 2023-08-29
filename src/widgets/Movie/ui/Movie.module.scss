@@ -1,0 +1,23 @@
+.root {
+  .similarMoviesRow {
+    padding-top: 45px;
+  }
+
+
+  .filmFactsRow {
+    padding-top: 45px;
+  }
+
+  .persons {
+    padding-top: 45px;
+    display: none;
+
+    @media (width <= 1330px) {
+      display: block;
+
+    }
+  }
+
+
+}
+

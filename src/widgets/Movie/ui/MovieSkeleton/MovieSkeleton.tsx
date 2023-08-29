@@ -2,7 +2,7 @@ import { Col, Row, Skeleton } from 'antd'
 
 import { Content } from '@/shared/ui'
 
-import styles from '../FilmPage.module.scss'
+import styles from './MovieSkeleton.module.scss'
 
 export const MovieSkeleton = () => {
   return (

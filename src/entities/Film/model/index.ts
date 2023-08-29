@@ -1,10 +1,10 @@
-interface Fact {
+export interface Fact {
   value: string
   type: string
   spoiler: boolean
 }
 
-interface Genre {
+export interface Genre {
   name: string
 }
 
@@ -15,7 +15,7 @@ interface Trailer {
   type: string
 }
 
-interface Person {
+export interface Person {
   id: number
   photo: string
   name: string

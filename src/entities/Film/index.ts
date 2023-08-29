@@ -1,2 +1,2 @@
 export { useGetFilmQuery } from './api/index'
-export type { Film, SimilarMovie } from './model/index'
+export type { Fact, Film, Genre, Person, SimilarMovie } from './model/index'

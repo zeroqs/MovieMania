@@ -1,0 +1,25 @@
+@import "@/shared/styles/respValue";
+
+.title {
+
+  @include respValue('font-size', 18, 20) ;
+
+  color: #ad241b !important;
+}
+
+.similarMovies {
+  padding-top: 15px;
+  position: relative;
+  width: 100%;
+
+  @media (width <= 1431px) {
+    text-align: center;
+  }
+
+
+  img {
+    width: 100%;
+    border-radius: 20px;
+
+  }
+}

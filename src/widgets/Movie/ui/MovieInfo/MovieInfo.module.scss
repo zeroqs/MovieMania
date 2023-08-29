@@ -1,0 +1,35 @@
+@import '@/shared/styles/respValue';
+
+.root {
+  .title {
+
+    @include respValue('font-size', 18, 20);
+
+    color: #ad241b;
+
+    .filmInfo {
+      color: #fff;
+    }
+
+    .filmDescription {
+
+      @include respValue('font-size', 14, 18);
+
+      color: #fff;
+      letter-spacing: 1px;
+      font-weight: 300;
+
+    }
+  }
+
+  .genres {
+    padding-top: 10px;
+  }
+
+  .persons {
+
+    @media (width <= 1330px) {
+      display: none;
+    }
+  }
+}

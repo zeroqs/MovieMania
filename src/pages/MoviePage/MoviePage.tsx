@@ -1,7 +1,7 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-import { Col, Row, Skeleton } from 'antd'
+import { Col, Row } from 'antd'
 import classNames from 'classnames'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
@@ -9,6 +9,7 @@ import SwiperType from 'swiper'
 import { SwiperProps, SwiperSlide } from 'swiper/react'
 
 import { useGetFilmQuery } from '@/entities/Film'
+import { MovieSkeleton } from '@/pages/MoviePage/Skeleton/Skeleton'
 import { budgetParse } from '@/shared/lib'
 import {
   Button,
@@ -111,12 +112,10 @@ const MoviePage = ({ className }: FilmPageProps) => {
   }
 
   const classes = classNames(className, styles.root)
-
+  console.log(isLoading)
   return (
     <>
-      {isLoading && (
-        <Skeleton.Button active block style={{ height: '300px' }} />
-      )}
+      {isLoading && <MovieSkeleton />}
       {isSuccess && (
         <Content className={classes}>
           <Row gutter={29}>

@@ -1,6 +1,6 @@
 import { Skeleton } from 'antd'
 import classNames from 'classnames'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import styles from './Image.module.scss'
 
@@ -29,6 +29,10 @@ export const Image = ({
   const handlerIsLoaded = () => {
     setIsLoaded(true)
   }
+
+  useEffect(() => {
+    setIsLoaded(false)
+  }, [src])
 
   return (
     <>

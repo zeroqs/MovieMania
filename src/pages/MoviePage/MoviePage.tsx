@@ -9,7 +9,6 @@ import SwiperType from 'swiper'
 import { SwiperProps, SwiperSlide } from 'swiper/react'
 
 import { useGetFilmQuery } from '@/entities/Film'
-import { MovieSkeleton } from '@/pages/MoviePage/Skeleton/Skeleton'
 import { budgetParse } from '@/shared/lib'
 import {
   Button,
@@ -21,6 +20,7 @@ import {
 } from '@/shared/ui'
 
 import styles from './FilmPage.module.scss'
+import { MovieSkeleton } from './Skeleton/Skeleton'
 
 interface FilmPageProps {
   className?: string

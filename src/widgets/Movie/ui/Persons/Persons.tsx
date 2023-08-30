@@ -19,8 +19,8 @@ export const Persons = ({ persons }: PersonsProps) => {
     <SwiperSlide key={item.id} className={styles.sliderItem}>
       <Image
         className={styles.imageHover}
-        skeletonWidth={300}
-        skeletonHeight={400}
+        skeletonWidth={200}
+        skeletonHeight={300}
         src={item.photo}
         alt={item.name}
       />

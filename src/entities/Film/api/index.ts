@@ -9,7 +9,7 @@ const filmApi = baseApi.injectEndpoints({
         url: `/${filmId}`,
       }),
       extraOptions: {
-        maxRetries: 5,
+        maxRetries: 3,
       },
     }),
   }),

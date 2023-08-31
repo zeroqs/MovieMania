@@ -11,7 +11,8 @@
     "lint:fix": "eslint \"src/**/*.{js,mjs,cjs,ts,mts,jsx,tsx}\" --fix",
     "style": "stylelint \"**/*.scss\"",
     "style:fix": "stylelint --fix \"**/*.scss\"",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -40,6 +41,7 @@
     "eslint-kit": "^10.3.0",
     "eslint-plugin-conarti-fsd": "^0.0.39",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "prettier": "^3.0.0",
     "sass": "^1.64.2",

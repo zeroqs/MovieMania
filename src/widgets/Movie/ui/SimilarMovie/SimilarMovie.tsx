@@ -4,7 +4,6 @@ import SwiperType from 'swiper'
 import { SwiperSlide } from 'swiper/react'
 
 import { SimilarMovie as SimilarMovieDto } from '@/entities/Film'
-import { baseApi } from '@/shared/api'
 import { Image, SliderControls, Typography } from '@/shared/ui'
 
 import { SLIDER_OPTIONS_MOVIE } from '../../lib/SliderOptionsSimilarMovie'
@@ -20,14 +19,7 @@ export const SimilarMovie = ({ similarMovies }: SimilarMovieProps) => {
 
   const renderItemsSimilarMovies = similarMovies.map((item) => (
     <SwiperSlide key={item.id} className={styles.sliderItem}>
-      <Link
-        to={`/movie/${item.id}`}
-        onClick={() => {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          baseApi.endpoints.getFilm.useQuery().invalidatesTags([])
-        }}
-      >
+      <Link to={`/movie/${item.id}`}>
         <Image
           className={styles.imageHover}
           skeletonWidth={300}

@@ -10,7 +10,7 @@ const filmSliderApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getFilmsForSlide: build.query<FilmSliderResponse, string>({
       query: () => ({
-        url: '?selectFields=backdrop&selectFields=id&limit=10&selectFields=name&selectFields=year&selectFields=shortDescription&selectFields=rating.imdb&selectFields=genres.name',
+        url: 'v1.3/movie?selectFields=backdrop&selectFields=id&limit=10&selectFields=name&selectFields=year&selectFields=shortDescription&selectFields=rating.imdb&selectFields=genres.name',
         providesTags: ['SliderFilm'],
         params: { page: getRandomInt(15) },
       }),

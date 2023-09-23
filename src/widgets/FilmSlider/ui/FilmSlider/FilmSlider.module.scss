@@ -6,7 +6,7 @@
 
   background-color: #070708;
   border-radius: 20px;
-  min-height: 700px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -48,7 +48,7 @@
 
   .shortDescription {
 
-    @include respValue('font-size', 19, 24);
+    @include respValue('font-size', 18, 21);
   }
 }
 

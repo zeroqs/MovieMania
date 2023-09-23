@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import SwiperType from 'swiper'
 import { SwiperSlide } from 'swiper/react'
 
@@ -17,13 +18,15 @@ export const Persons = ({ persons }: PersonsProps) => {
 
   const renderItemsPersons = persons.map((item) => (
     <SwiperSlide key={item.id} className={styles.sliderItem}>
-      <Image
-        className={styles.imageHover}
-        skeletonWidth={200}
-        skeletonHeight={300}
-        src={item.photo}
-        alt={item.name}
-      />
+      <Link to={`/person/${item.id}`}>
+        <Image
+          className={styles.imageHover}
+          skeletonWidth={200}
+          skeletonHeight={300}
+          src={item.photo}
+          alt={item.name}
+        />
+      </Link>
     </SwiperSlide>
   ))
   const handleSlideChange = (swiper: SwiperType) => {

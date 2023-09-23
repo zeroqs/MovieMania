@@ -6,7 +6,7 @@ const filmApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getFilm: build.query<Film, number>({
       query: (filmId) => ({
-        url: `/${filmId}`,
+        url: `v1.3/movie/${filmId}`,
       }),
       keepUnusedDataFor: 1,
       extraOptions: {

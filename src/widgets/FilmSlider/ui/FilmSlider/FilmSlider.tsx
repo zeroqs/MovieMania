@@ -79,7 +79,9 @@ export const FilmSlider = ({
           />
         </header>
         <main className={styles.main}>
-          <Typography>{movies[activeIndex].shortDescription}</Typography>
+          <Typography className={styles.shortDescription}>
+            {movies[activeIndex].shortDescription}
+          </Typography>
         </main>
         <footer className={styles.footer}>
           <div className={styles.leftSide}>

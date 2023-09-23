@@ -8,6 +8,7 @@ const filmApi = baseApi.injectEndpoints({
       query: (filmId) => ({
         url: `/${filmId}`,
       }),
+      keepUnusedDataFor: 1,
       extraOptions: {
         maxRetries: 3,
       },

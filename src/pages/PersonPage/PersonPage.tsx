@@ -1,12 +1,11 @@
-import { useParams } from 'react-router-dom'
-
-import { useGetPersonQuery } from '@/entities/Person'
+import { Person } from '@/widgets/Person'
 
 const PersonPage = () => {
-  const { personId } = useParams()
-  const { data } = useGetPersonQuery(String(personId))
-  console.log(data)
-  return <>Person {personId}</>
+  return (
+    <>
+      <Person />
+    </>
+  )
 }
 
 // eslint-disable-next-line import/no-default-export

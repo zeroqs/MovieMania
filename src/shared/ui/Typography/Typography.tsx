@@ -27,7 +27,7 @@ export const Typography = ({
     )
 
   return (
-    <antTypography.Title role="title" className={classes} level={titleLevel}>
+    <antTypography.Title role="title" level={titleLevel} className={classes}>
       {children}
     </antTypography.Title>
   )

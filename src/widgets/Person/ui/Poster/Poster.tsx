@@ -15,14 +15,16 @@ export const Poster = ({ className, src, alt }: PosterProps) => {
   const classes = classNames(className, styles.root)
 
   return (
-    <Col className={classes} xs={24} sm={24} md={10} lg={10} xl={10}>
-      <Image
-        skeletonWidth={500}
-        skeletonHeight={600}
-        className={styles.image}
-        alt={alt}
-        src={src}
-      />
+    <Col className={classes}>
+      <div className={styles.imageWrapper}>
+        <Image
+          skeletonWidth={500}
+          skeletonHeight={600}
+          className={styles.image}
+          alt={alt}
+          src={src}
+        />
+      </div>
     </Col>
   )
 }

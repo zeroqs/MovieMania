@@ -33,18 +33,16 @@ export const Image = ({
   useEffect(() => {
     setIsLoaded(false)
   }, [src])
-
+  // TODO сделать пропс для скелетона
   return (
     <>
-      <div>
-        <img
-          data-testid={dataId}
-          className={classes}
-          src={src}
-          alt={alt}
-          onLoad={handlerIsLoaded}
-        />
-      </div>
+      <img
+        data-testid={dataId}
+        className={classes}
+        src={src}
+        alt={alt}
+        onLoad={handlerIsLoaded}
+      />
       {!isLoaded && (
         <div data-testid="img-loading">
           <Skeleton.Image

@@ -1,0 +1,25 @@
+.personHeader {
+  display: grid;
+  grid-template-areas:
+        "photo title"
+        "photo info";
+  grid-template-columns: auto 1fr;
+
+  @media (width <= 610px) {
+    grid-template-areas:
+        "photo title"
+        "photo title"
+        "info info";
+  }
+
+  @media (width <= 575px) {
+    padding: 24px 0;
+  }
+
+  .poster {
+    margin-right: 30px;
+    grid-area: photo;
+
+  }
+
+}

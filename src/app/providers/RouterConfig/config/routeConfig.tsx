@@ -20,7 +20,7 @@ const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.MOVIE]: '/movie/:movieId',
   [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.PERSON]: '/person/:personId',
+  [AppRoutes.PERSON]: '/name/:personId',
   [AppRoutes.NOTFOUND]: '*',
 }
 

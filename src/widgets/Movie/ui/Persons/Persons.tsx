@@ -16,8 +16,8 @@ interface PersonsProps {
 export const Persons = ({ persons }: PersonsProps) => {
   const [, setActiveIndex] = useState(0)
 
-  const renderItemsPersons = persons.map((item) => (
-    <SwiperSlide key={item.id} className={styles.sliderItem}>
+  const renderItemsPersons = persons.map((item, index) => (
+    <SwiperSlide key={index} className={styles.sliderItem}>
       <Link to={`/person/${item.id}`}>
         <Image
           className={styles.imageHover}

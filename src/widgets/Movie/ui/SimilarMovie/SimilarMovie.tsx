@@ -17,8 +17,8 @@ interface SimilarMovieProps {
 export const SimilarMovie = ({ similarMovies }: SimilarMovieProps) => {
   const [, setActiveIndex] = useState(0)
 
-  const renderItemsSimilarMovies = similarMovies.map((item) => (
-    <SwiperSlide key={item.id} className={styles.sliderItem}>
+  const renderItemsSimilarMovies = similarMovies.map((item, index) => (
+    <SwiperSlide key={index} className={styles.sliderItem}>
       <Link to={`/movie/${item.id}`}>
         <Image
           className={styles.imageHover}

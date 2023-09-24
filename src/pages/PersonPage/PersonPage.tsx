@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 
-import { useGetPersonQuery } from '@/entities/Person/api'
+import { useGetPersonQuery } from '@/entities/Person'
 
 const PersonPage = () => {
   const { personId } = useParams()

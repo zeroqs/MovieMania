@@ -18,7 +18,7 @@ export const Persons = ({ persons }: PersonsProps) => {
 
   const renderItemsPersons = persons.map((item, index) => (
     <SwiperSlide key={index} className={styles.sliderItem}>
-      <Link to={`/person/${item.id}`}>
+      <Link to={`/name/${item.id}`}>
         <Image
           className={styles.imageHover}
           skeletonWidth={200}

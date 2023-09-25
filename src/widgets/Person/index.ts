@@ -1,1 +1,1 @@
-export { Person } from './ui/Person.tsx'
+export { Person } from './ui/Person'

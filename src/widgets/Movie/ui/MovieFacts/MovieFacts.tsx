@@ -35,13 +35,15 @@ export const MovieFacts = ({ className, facts }: MovieFactsProps) => {
       <div className={styles.filmFacts}>
         <ul>{factItems}</ul>
       </div>
-      <Button
-        className={styles.showMoreButton}
-        type="link"
-        onClick={() => setShowMore(!showMore)}
-      >
-        {showMore ? 'Скрыть' : 'Показать больше'}
-      </Button>
+      {facts.length > 4 && (
+        <Button
+          className={styles.showMoreButton}
+          type="link"
+          onClick={() => setShowMore(!showMore)}
+        >
+          {showMore ? 'Скрыть' : 'Показать больше'}
+        </Button>
+      )}
     </div>
   )
 }

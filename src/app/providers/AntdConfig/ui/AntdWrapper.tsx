@@ -26,6 +26,12 @@ const theme: ThemeConfig = {
     Button: {
       boxShadow: 'none',
     },
+    Segmented: {
+      itemActiveBg: 'inherit',
+      itemSelectedBg: '#ad241b',
+      itemHoverColor: '#fff',
+      itemColor: '#fff',
+    },
   },
   token: {
     colorPrimary: '#ad241b',

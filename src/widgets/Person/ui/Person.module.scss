@@ -12,6 +12,14 @@
         "info info";
   }
 
+  @media (width <= 330px) {
+    grid-template-areas:
+
+  "photo photo"
+  "title title"
+  "info info";
+  }
+
   @media (width <= 575px) {
     padding: 24px 0;
   }
@@ -21,5 +29,6 @@
     grid-area: photo;
 
   }
-
 }
+
+

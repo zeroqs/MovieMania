@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { useGetPersonQuery } from '@/entities/Person'
 import { Content } from '@/shared/ui'
 
+import { Movies } from './Movies/Movies'
 import styles from './Person.module.scss'
 import { PersonInfo } from './PersonInfo/PersonInfo'
 import { Poster } from './Poster/Poster'
@@ -23,10 +24,16 @@ export const Person = () => {
         <Content className={styles.content}>
           <Row justify="center">
             <div className={styles.personHeader}>
-              <Poster className={styles.poster} alt="" src={data.photo} />
+              <Poster
+                className={styles.poster}
+                alt={data.name}
+                src={data.photo}
+              />
               <PersonInfo {...data} />
             </div>
           </Row>
+
+          <Movies movies={data.movies} />
         </Content>
       )}
     </>

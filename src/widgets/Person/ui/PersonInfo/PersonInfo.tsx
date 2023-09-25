@@ -10,7 +10,6 @@ export const PersonInfo = ({
   birthPlace,
   name,
   enName,
-  // movies,
   age,
   birthday,
 }: Person) => {
@@ -25,7 +24,6 @@ export const PersonInfo = ({
       </span>
     </div>
   )
-  // const movie = movies.filter((item) => item.name)
 
   return (
     <>

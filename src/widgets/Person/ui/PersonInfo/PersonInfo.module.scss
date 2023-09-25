@@ -13,6 +13,10 @@
   display: flex;
   flex-direction: column;
   grid-area: title;
+
+  @media (width <= 330px) {
+    flex-wrap: wrap;
+  }
 }
 
 .headerInfo {
@@ -23,12 +27,17 @@
   @media (width <= 610px) {
     margin-top: 20px;
   }
+
 }
 
 .row {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+
+  @media (width <= 330px) {
+    flex-wrap: wrap;
+  }
 }
 
 .valueTitle {

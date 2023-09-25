@@ -10,7 +10,7 @@ interface Profession {
   value: string
 }
 
-interface Movie {
+export interface Movie {
   id: number
   name: string
   alternativeName: string

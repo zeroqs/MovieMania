@@ -26,13 +26,15 @@ export const Movie = ({ className }: MovieProps) => {
 
   if (isLoading) return <MovieSkeleton />
   if (isError) return <h1>Error fetch</h1>
-
+  const posterUrl = data?.poster
+    ? data.poster.url
+    : 'https://st.kp.yandex.net/images/no-poster.gif'
   return (
     <>
       {isSuccess && (
         <Content className={classes}>
           <Row gutter={29}>
-            <Poster alt="" src={data.poster.url} />
+            <Poster alt={data.name} src={posterUrl} />
             <MovieInfo
               genres={data.genres}
               name={data.name}
@@ -43,16 +45,19 @@ export const Movie = ({ className }: MovieProps) => {
               personsDesktop={<Persons persons={data.persons} />}
             />
           </Row>
-          <Row className={styles.similarMoviesRow}>
-            <SimilarMovie similarMovies={data.similarMovies} />
-          </Row>
+          {data.similarMovies.length > 0 && (
+            <Row className={styles.similarMoviesRow}>
+              <SimilarMovie similarMovies={data.similarMovies} />
+            </Row>
+          )}
           <Row className={styles.persons}>
             <Persons persons={data.persons} />
           </Row>
-
-          <Row className={styles.filmFactsRow}>
-            <MovieFacts facts={data.facts} />
-          </Row>
+          {data.facts.length > 0 && (
+            <Row className={styles.filmFactsRow}>
+              <MovieFacts facts={data.facts} />
+            </Row>
+          )}
         </Content>
       )}
     </>

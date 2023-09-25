@@ -1,0 +1,15 @@
+.root {
+  font-weight: 400;
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 0 15px;
+}
+
+.goodRating {
+  background-color: hsl(116deg 100% 55% / 55%);
+}
+
+.badRating {
+  background-color: hsl(258deg 4% 55% / 32%);
+}

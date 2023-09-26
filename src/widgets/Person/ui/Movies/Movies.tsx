@@ -27,6 +27,10 @@ export const Movies = ({ className, movies }: MoviesProps) => {
     setPagination((prevState) => prevState + 10)
   }
 
+  if (movie.length === 0) {
+    return <></>
+  }
+
   return (
     <div className={classes}>
       <div className={styles.grid}>

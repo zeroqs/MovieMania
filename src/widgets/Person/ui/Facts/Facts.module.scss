@@ -1,0 +1,37 @@
+@import "@/shared/styles/respValue";
+
+.root {
+  li {
+    padding: 10px;
+
+    @include respValue('font-size', 16, 20);
+
+    a {
+      color: #ad241b;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  li:not(:first-child) {
+    border-top: 2px solid #545454;
+  }
+
+  .showMoreButton {
+    color: #ad241b;
+    font-size: 20px;
+
+  }
+
+  .similarMoviesTitle {
+    padding-top: 15px;
+
+    @include respValue('font-size', 25, 30);
+
+    color: #ad241b;
+
+  }
+}

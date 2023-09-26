@@ -2,7 +2,7 @@ interface BirthPlace {
   value: string
 }
 
-interface Fact {
+export interface Fact {
   value: string
 }
 

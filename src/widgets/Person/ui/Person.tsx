@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { useGetPersonQuery } from '@/entities/Person'
 import { Content } from '@/shared/ui'
 
+import { Facts } from './Facts/Facts'
 import { Movies } from './Movies/Movies'
 import styles from './Person.module.scss'
 import { PersonInfo } from './PersonInfo/PersonInfo'
@@ -32,8 +33,8 @@ export const Person = () => {
               <PersonInfo {...data} />
             </div>
           </Row>
-
           <Movies movies={data.movies} />
+          <Facts facts={data.facts} />
         </Content>
       )}
     </>

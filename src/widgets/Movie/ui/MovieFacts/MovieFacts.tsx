@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import { useState } from 'react'
 
 import { Fact } from '@/entities/Film'
+import { usePagination } from '@/shared/hooks/usePagination.ts'
 import { Button, Typography } from '@/shared/ui'
 
 import styles from './MovieFacts.module.scss'
@@ -13,35 +13,30 @@ interface MovieFactsProps {
 
 export const MovieFacts = ({ className, facts }: MovieFactsProps) => {
   const classes = classNames(className, styles.root)
-  const [showMore, setShowMore] = useState(false)
+  const { sortedArray, pagination, changePaginationValue } = usePagination(
+    facts,
+    5,
+  )
 
-  const factItems = showMore
-    ? facts.map((item) => (
-        <li key={item.value} dangerouslySetInnerHTML={{ __html: item.value }} />
-      ))
-    : facts
-        .slice(0, 4)
-        .map((item) => (
-          <li
-            key={item.value}
-            dangerouslySetInnerHTML={{ __html: item.value }}
-          />
-        ))
+  const factItems = sortedArray.map((item) => (
+    <li key={item.value} dangerouslySetInnerHTML={{ __html: item.value }} />
+  ))
+
   return (
     <div className={classes}>
       <Typography className={styles.similarMoviesTitle} type="title">
-        Факты о фильме:
+        Факты о фильме ({facts.length}):
       </Typography>
       <div className={styles.filmFacts}>
         <ul>{factItems}</ul>
       </div>
-      {facts.length > 4 && (
+      {facts.length > pagination && (
         <Button
           className={styles.showMoreButton}
           type="link"
-          onClick={() => setShowMore(!showMore)}
+          onClick={changePaginationValue}
         >
-          {showMore ? 'Скрыть' : 'Показать больше'}
+          Показать больше
         </Button>
       )}
     </div>

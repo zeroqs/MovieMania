@@ -20,13 +20,15 @@ export const SimilarMovie = ({ similarMovies }: SimilarMovieProps) => {
   const renderItemsSimilarMovies = similarMovies.map((item, index) => (
     <SwiperSlide key={index} className={styles.sliderItem}>
       <Link to={`/movie/${item.id}`}>
-        <Image
-          className={styles.imageHover}
-          skeletonWidth={300}
-          skeletonHeight={400}
-          src={item.poster.url}
-          alt={item.name}
-        />
+        <div className={styles.imageWrapper}>
+          <Image
+            className={styles.imageHover}
+            skeletonWidth={300}
+            skeletonHeight={400}
+            src={item.poster.url}
+            alt={item.name}
+          />
+        </div>
       </Link>
     </SwiperSlide>
   ))

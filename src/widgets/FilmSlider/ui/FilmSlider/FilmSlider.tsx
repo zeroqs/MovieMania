@@ -86,7 +86,7 @@ export const FilmSlider = ({
         <footer className={styles.footer}>
           <div className={styles.leftSide}>
             <NavLink to={`/movie/${movies[activeIndex].id}`}>
-              <Button className={styles.buttonDetails}>Details</Button>
+              <Button className={styles.buttonDetails}>Подробнее</Button>
             </NavLink>
           </div>
           <SliderControls

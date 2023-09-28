@@ -4,7 +4,7 @@ import { ReactNode } from 'react'
 import SwiperType from 'swiper'
 import { Swiper, SwiperProps } from 'swiper/react'
 
-import { useSwiperNavigation } from '../../lib/useSwiperNavigation'
+import { useSwiperNavigation } from '../../hooks/useSwiperNavigation.ts'
 import { Button } from '../Button/Button'
 import styles from './SliderControls.module.scss'
 

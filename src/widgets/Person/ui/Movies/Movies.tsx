@@ -1,8 +1,8 @@
 import classNames from 'classnames'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Movie } from '@/entities/Person'
+import { usePagination } from '@/shared/hooks/usePagination.ts'
 import { Button, Image } from '@/shared/ui'
 
 import { Rating } from '../Rating/Rating'
@@ -15,32 +15,33 @@ interface MoviesProps {
 
 export const Movies = ({ className, movies }: MoviesProps) => {
   const classes = classNames(className, styles.root)
-  const [pagination, setPagination] = useState(10)
-  const movie = movies
-    .filter((item) => item.name)
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, pagination)
+  const { sortedArray, changePaginationValue, pagination } = usePagination(
+    movies,
+    10,
+    [
+      (arr) => arr.filter((item) => item.name),
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      (arr) => arr.sort((a, b) => b.rating - a.rating),
+    ],
+  )
 
-  const showMore = () => {
-    setPagination((prevState) => prevState + 10)
-  }
-
-  if (movie.length === 0) {
+  if (sortedArray.length === 0) {
     return <></>
   }
 
   return (
     <div className={classes}>
       <div className={styles.grid}>
-        {movie.map((item, index) => (
+        {sortedArray.map((item, index) => (
           <Link key={index} to={`/movie/${item.id}`} className={styles.item}>
             <div className={styles.imageWrapper}>
               <Image
                 key={index}
                 className={styles.imageItem}
-                src={`https://st.kp.yandex.net/images/film_iphone/iphone360_${item.id}.jpg`}
+                src={`https://st.kp.yandex.net/images/film_iphone/iphone360_${
+                  item.id
+                }.jpg?${Date.now()}`}
                 alt={item.name}
               />
             </div>
@@ -51,9 +52,15 @@ export const Movies = ({ className, movies }: MoviesProps) => {
           </Link>
         ))}
       </div>
-      <Button size="large" className={styles.showMore} onClick={showMore}>
-        Показать больше
-      </Button>
+      {movies.length > pagination && (
+        <Button
+          size="large"
+          className={styles.showMore}
+          onClick={changePaginationValue}
+        >
+          Показать больше
+        </Button>
+      )}
     </div>
   )
 }

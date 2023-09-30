@@ -13,6 +13,7 @@ interface SliderControlsProps {
   handleSlideChange: (swiper: SwiperType) => void
   renderItems: ReactNode
   sliderOptions: SwiperProps
+  controls?: boolean
 }
 
 export const SliderControls = ({
@@ -20,6 +21,7 @@ export const SliderControls = ({
   handleSlideChange,
   sliderOptions,
   renderItems,
+  controls = true,
 }: SliderControlsProps) => {
   const { onSwiper, nextBtnRef, prevBtnRef } = useSwiperNavigation()
   const classes = classNames(className, styles.root)
@@ -33,12 +35,17 @@ export const SliderControls = ({
       >
         {renderItems}
       </Swiper>
-      <Button className={styles.prev} buttonRef={prevBtnRef}>
-        <LeftOutlined style={{ fontSize: 11 }} />
-      </Button>
-      <Button className={styles.next} buttonRef={nextBtnRef}>
-        <RightOutlined style={{ fontSize: 11 }} />
-      </Button>
+
+      {controls && (
+        <>
+          <Button className={styles.prev} buttonRef={prevBtnRef}>
+            <LeftOutlined style={{ fontSize: 11 }} />
+          </Button>
+          <Button className={styles.next} buttonRef={nextBtnRef}>
+            <RightOutlined style={{ fontSize: 11 }} />
+          </Button>
+        </>
+      )}
     </div>
   )
 }

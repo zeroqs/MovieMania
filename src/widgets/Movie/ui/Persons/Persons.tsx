@@ -17,7 +17,7 @@ export const Persons = ({ persons }: PersonsProps) => {
   const [, setActiveIndex] = useState(0)
 
   const renderItemsPersons = persons.map((item, index) => (
-    <SwiperSlide key={index} className={styles.sliderItem}>
+    <SwiperSlide key={index}>
       <Link to={`/name/${item.id}`}>
         <Image
           className={styles.imageHover}

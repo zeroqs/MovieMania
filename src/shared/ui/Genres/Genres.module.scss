@@ -3,15 +3,31 @@
   display: flex;
   gap: 20px;
 
-  span {
+  .text {
     background: #ad241b;
     padding: 10px;
     border-radius: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    a {
+      background: #ad241b;
+      padding: 10px;
+      border-radius: 10px;
+    }
   }
 
-  a {
-    background: #ad241b;
-    padding: 10px;
-    border-radius: 10px;
-  }
-}          
+
+}
+
+.default {
+  width: 100%;
+  background: rgb(173 36 27 / 72%);
+  padding: 12px 10px;
+  border-radius: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}

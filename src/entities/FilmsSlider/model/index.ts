@@ -1,5 +1,8 @@
+import { ReactNode } from 'react'
+
 export interface Genres {
   name: string
+  icon?: ReactNode
 }
 
 export interface IFilmSlider {

@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import { HashRouter } from 'react-router-dom'
 import { describe, expect, test } from 'vitest'
 
 import { Genres } from './Genres'
@@ -13,7 +14,11 @@ describe('Genres', () => {
     ]
     const showCount = 3
 
-    render(<Genres forSlider={false} showCount={showCount} genres={genres} />)
+    render(
+      <HashRouter>
+        <Genres forSlider={false} showCount={showCount} genres={genres} />
+      </HashRouter>,
+    )
 
     const contentWrapper = screen.getAllByRole('text')
 
@@ -42,12 +47,15 @@ describe('Genres', () => {
     const showCount = 3
     const activeIndex = 0
     render(
-      <Genres
-        forSlider={true}
-        movies={movies}
-        showCount={showCount}
-        activeIndex={activeIndex}
-      />,
+      <HashRouter>
+        <Genres
+          forSlider={true}
+          movies={movies}
+          showCount={showCount}
+          activeIndex={activeIndex}
+        />
+        ,
+      </HashRouter>,
     )
 
     const contentWrapper = screen.getAllByRole('text')

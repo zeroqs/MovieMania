@@ -32,9 +32,11 @@ export const Genres = ({
     return (
       <div data-testid={dataId} className={classes}>
         {movies![activeIndex!].genres.slice(0, showCount).map((item) => (
-          <Typography key={item.name} className={styles.text}>
-            {item.name}
-          </Typography>
+          <Link key={item.name} to={`/about?genre=${item.name.toLowerCase()}`}>
+            <Typography key={item.name} className={styles.text}>
+              {item.name}
+            </Typography>
+          </Link>
         ))}
       </div>
     )

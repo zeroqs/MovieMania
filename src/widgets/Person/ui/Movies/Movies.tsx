@@ -1,11 +1,9 @@
 import classNames from 'classnames'
-import { Link } from 'react-router-dom'
 
 import { Movie } from '@/entities/Person'
-import { usePagination } from '@/shared/hooks/usePagination.ts'
-import { Button, Image } from '@/shared/ui'
+import { usePagination } from '@/shared/hooks/usePagination'
+import { Button, MovieCard } from '@/shared/ui'
 
-import { Rating } from '../Rating/Rating'
 import styles from './Movies.module.scss'
 
 interface MoviesProps {
@@ -33,23 +31,13 @@ export const Movies = ({ className, movies }: MoviesProps) => {
   return (
     <div className={classes}>
       <div className={styles.grid}>
-        {sortedArray.map((item, index) => (
-          <Link key={index} to={`/movie/${item.id}`} className={styles.item}>
-            <div className={styles.imageWrapper}>
-              <Image
-                key={index}
-                className={styles.imageItem}
-                src={`https://st.kp.yandex.net/images/film_iphone/iphone360_${
-                  item.id
-                }.jpg?${Date.now()}`}
-                alt={item.name}
-              />
-            </div>
-            <div className={styles.content}>
-              <Rating className={styles.rating} rating={item.rating} />
-              <h3>{item.name}</h3>
-            </div>
-          </Link>
+        {sortedArray.map((item) => (
+          <MovieCard
+            key={item.id}
+            filmTitle={item.name}
+            filmId={item.id}
+            filmRating={item.rating || 0}
+          />
         ))}
       </div>
       {movies.length > pagination && (

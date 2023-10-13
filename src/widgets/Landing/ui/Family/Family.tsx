@@ -7,8 +7,8 @@ import { MovieCard, SliderControls, Typography } from '@/shared/ui'
 
 import { SLIDER_OPTIONS_LANDING } from '../../lib/ComedySliderOptions'
 
-export const Comedy = () => {
-  const { data, isSuccess } = useGetFilmByGenreQuery('комедия')
+export const Family = () => {
+  const { data, isSuccess } = useGetFilmByGenreQuery('семейный')
   const [, setActiveIndex] = useState(0)
   const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.activeIndex)
@@ -16,7 +16,7 @@ export const Comedy = () => {
   return (
     <div>
       <Typography titleLevel={4} type="title">
-        Комедия{' '}
+        Смотрим всей семьей{' '}
       </Typography>
 
       {isSuccess && (

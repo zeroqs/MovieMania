@@ -12,6 +12,7 @@ interface MovieCardProps {
   filmTitle: string
   filmId: number
   filmRating: number
+  imgCache?: boolean
 }
 
 export const MovieCard = ({
@@ -19,15 +20,17 @@ export const MovieCard = ({
   filmId,
   filmTitle,
   filmRating,
+  imgCache = false,
 }: MovieCardProps) => {
   const classes = classNames(className, styles.root)
+  const isCached = imgCache ? Date.now() : ''
 
   return (
     <Link key={filmId} to={`/movie/${filmId}`} className={classes}>
       <div className={styles.imageWrapper}>
         <Image
           className={styles.imageItem}
-          src={`https://st.kp.yandex.net/images/film_iphone/iphone360_${filmId}.jpg`}
+          src={`https://st.kp.yandex.net/images/film_iphone/iphone360_${filmId}.jpg?${isCached}`}
           alt={filmTitle}
         />
       </div>

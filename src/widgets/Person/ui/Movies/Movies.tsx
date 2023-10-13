@@ -31,9 +31,9 @@ export const Movies = ({ className, movies }: MoviesProps) => {
   return (
     <div className={classes}>
       <div className={styles.grid}>
-        {sortedArray.map((item) => (
+        {sortedArray.map((item, index) => (
           <MovieCard
-            key={item.id}
+            key={index}
             filmTitle={item.name}
             filmId={item.id}
             filmRating={item.rating || 0}

@@ -36,6 +36,7 @@ export const Movies = ({ className, movies }: MoviesProps) => {
             key={index}
             filmTitle={item.name}
             filmId={item.id}
+            imgCache
             filmRating={item.rating || 0}
           />
         ))}

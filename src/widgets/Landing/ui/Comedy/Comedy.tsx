@@ -6,9 +6,10 @@ import { useGetFilmByGenreQuery } from '@/entities/Film'
 import { MovieCard, SliderControls, Typography } from '@/shared/ui'
 
 import { SLIDER_OPTIONS_LANDING } from '../../lib/ComedySliderOptions'
+import { loadingIcon } from '../../lib/Loading.tsx'
 
 export const Comedy = () => {
-  const { data, isSuccess } = useGetFilmByGenreQuery('комедия')
+  const { data, isSuccess, isLoading } = useGetFilmByGenreQuery('комедия')
   const [, setActiveIndex] = useState(0)
   const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.activeIndex)
@@ -18,6 +19,8 @@ export const Comedy = () => {
       <Typography titleLevel={4} type="title">
         Комедия{' '}
       </Typography>
+
+      {isLoading && loadingIcon}
 
       {isSuccess && (
         <SliderControls

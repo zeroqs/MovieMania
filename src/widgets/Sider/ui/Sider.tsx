@@ -28,7 +28,7 @@ function getItem(
 
 const items: MenuItem[] = [
   getItem(<NavLink to="/">Главная</NavLink>, '1', <HomeOutlined />),
-  getItem(<NavLink to="/about">Список</NavLink>, '2', <CompassOutlined />),
+  getItem(<NavLink to="/about">Фильмы</NavLink>, '2', <CompassOutlined />),
   getItem(<NavLink to="/list">Избранные</NavLink>, '3', <HeartOutlined />),
 ]
 

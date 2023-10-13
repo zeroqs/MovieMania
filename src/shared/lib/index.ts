@@ -1,2 +1,2 @@
-export { useSwiperNavigation } from '../hooks/useSwiperNavigation.ts'
+export { useSwiperNavigation } from '../hooks/useSwiperNavigation'
 export { budgetParse } from './budgetParse'

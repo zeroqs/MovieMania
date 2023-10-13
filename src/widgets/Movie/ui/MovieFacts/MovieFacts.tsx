@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 import { Fact } from '@/entities/Film'
-import { usePagination } from '@/shared/hooks/usePagination.ts'
+import { usePagination } from '@/shared/hooks/usePagination'
 import { Button, Typography } from '@/shared/ui'
 
 import styles from './MovieFacts.module.scss'

@@ -32,7 +32,7 @@ export const Genres = ({
     return (
       <div data-testid={dataId} className={classes}>
         {movies![activeIndex!].genres.slice(0, showCount).map((item) => (
-          <Link key={item.name} to={`/about?genre=${item.name.toLowerCase()}`}>
+          <Link key={item.name} to={`/movies?genre=${item.name.toLowerCase()}`}>
             <Typography key={item.name} className={styles.text}>
               {item.name}
             </Typography>
@@ -44,7 +44,7 @@ export const Genres = ({
   return (
     <div data-testid={dataId} className={classes}>
       {genres!.slice(0, showCount).map((item) => (
-        <Link key={item.name} to={`/about?genre=${item.name.toLowerCase()}`}>
+        <Link key={item.name} to={`/movies?genre=${item.name.toLowerCase()}`}>
           <Typography className={styles.text}>
             {item.icon}
             {item.name}

@@ -53,7 +53,7 @@ export const Movie = ({ className }: MovieProps) => {
           <Row className={styles.persons}>
             <Persons persons={data.persons} />
           </Row>
-          {data.facts.length > 0 && (
+          {data.facts && (
             <Row className={styles.filmFactsRow}>
               <MovieFacts facts={data.facts} />
             </Row>

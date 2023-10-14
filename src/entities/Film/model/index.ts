@@ -54,3 +54,9 @@ export interface Film {
     imdb: number
   }
 }
+
+export interface GetFilmsArgs {
+  genre?: string
+  rating?: number
+  release?: string
+}

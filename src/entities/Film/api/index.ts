@@ -26,7 +26,26 @@ const filmApi = baseApi.injectEndpoints({
         return response.docs.map((item) => item)
       },
     }),
+    getFilms: build.query<Film[], { genre?: string; sort?: string }>({
+      query: (args) => ({
+        url: `https://api.kinopoisk.dev/v1.3/movie?year=0-2022
+        &typeNumber=1${
+          args.genre ? `&genres.name=${args.genre}` : ''
+        }&rating.imdb=1-10&poster.previewUrl=!null&sortField[]=${
+          args.sort
+        }&sortType[]=-1&sortType[]=-1&limit=30`,
+      }),
+      transformResponse: (response: {
+        docs: Film[]
+        limit: number
+        pages: number
+        total: number
+      }) => {
+        return response.docs.map((item) => item)
+      },
+    }),
   }),
 })
 
-export const { useGetFilmQuery, useGetFilmByGenreQuery } = filmApi
+export const { useGetFilmQuery, useGetFilmByGenreQuery, useGetFilmsQuery } =
+  filmApi

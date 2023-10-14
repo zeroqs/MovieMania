@@ -13,7 +13,7 @@ export const GenresSlider = () => {
 
   const renderItems = genres.map((item) => (
     <SwiperSlide key={item.name}>
-      <Link to={`/about?genre=${item.name.toLowerCase()}`}>
+      <Link to={`/movies?genre=${item.name.toLowerCase()}`}>
         <Typography key={item.name} className={styles.root}>
           {item.name}
           {item.icon}

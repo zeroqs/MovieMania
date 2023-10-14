@@ -1,9 +1,9 @@
 import { RouteProps } from 'react-router-dom'
 
 import {
-  AboutPage,
   FilmPage,
   MainPage,
+  MoviesPage,
   NotFound,
   PersonPage,
 } from '@/pages/index'
@@ -11,7 +11,7 @@ import {
 enum AppRoutes {
   MAIN = 'main',
   NOTFOUND = 'NotFound',
-  ABOUT = 'about',
+  MOVIES = 'movies',
   MOVIE = 'movie',
   PERSON = 'person',
 }
@@ -19,7 +19,7 @@ enum AppRoutes {
 const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.MOVIE]: '/movie/:movieId',
-  [AppRoutes.ABOUT]: '/about',
+  [AppRoutes.MOVIES]: '/movies',
   [AppRoutes.PERSON]: '/name/:personId',
   [AppRoutes.NOTFOUND]: '*',
 }
@@ -29,9 +29,9 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     path: RoutePath.main,
     element: <MainPage />,
   },
-  [AppRoutes.ABOUT]: {
-    path: RoutePath.about,
-    element: <AboutPage />,
+  [AppRoutes.MOVIES]: {
+    path: RoutePath.movies,
+    element: <MoviesPage />,
   },
   [AppRoutes.MOVIE]: {
     path: RoutePath.movie,

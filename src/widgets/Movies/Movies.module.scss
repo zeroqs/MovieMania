@@ -1,0 +1,77 @@
+@import '@/shared/styles/respValue';
+
+.grid {
+  padding: 25px 0;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+
+  @media (width <= 1150px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (width <= 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (width <= 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width <= 330px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.loadingCard {
+  height: 462px;
+
+
+  @media (width >= 2000px) {
+    height: 623px;
+  }
+
+  @media (width <= 1700px) {
+    height: 412px;
+  }
+
+  @media (width <= 1450px) {
+    height: 332px;
+  }
+
+  @media (width <= 1230px) {
+    height: 292px;
+  }
+
+  @media (width <= 1025px) {
+    height: 352px;
+  }
+
+  @media (width <= 992px) {
+    height: 432px;
+  }
+
+  @media (width <= 768px) {
+    height: 532px;
+  }
+
+  @media (width <= 640px) {
+    height: 412px;
+  }
+
+  @media (width <= 540px) {
+    height: 342px;
+  }
+
+  @media (width <= 440px) {
+    height: 252px;
+  }
+
+  @media (width <= 400px) {
+    height: 222px;
+  }
+  
+  @media (width <= 330px) {
+    height: 382px;
+  }
+}

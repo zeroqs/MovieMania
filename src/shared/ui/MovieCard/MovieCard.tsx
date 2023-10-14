@@ -1,3 +1,4 @@
+import { Skeleton } from 'antd'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 
@@ -13,6 +14,7 @@ interface MovieCardProps {
   filmId: number
   filmRating: number
   imgCache?: boolean
+  isLoading?: boolean
 }
 
 export const MovieCard = ({
@@ -21,9 +23,24 @@ export const MovieCard = ({
   filmTitle,
   filmRating,
   imgCache = false,
+  isLoading = false,
 }: MovieCardProps) => {
   const classes = classNames(className, styles.root)
   const isCached = imgCache ? Date.now() : ''
+
+  if (isLoading) {
+    return (
+      <div className={classes}>
+        <Skeleton.Button
+          className={styles.imageWrapperLoading}
+          active
+          size="large"
+          shape="square"
+          block
+        />
+      </div>
+    )
+  }
 
   return (
     <Link key={filmId} to={`/movie/${filmId}`} className={classes}>

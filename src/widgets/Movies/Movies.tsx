@@ -41,6 +41,7 @@ export const Movies = () => {
           <Select
             style={{ width: '160px' }}
             placeholder="Жанры"
+            value={genre}
             onChange={handleGenre}
             options={genresOptions}
             showSearch={false}

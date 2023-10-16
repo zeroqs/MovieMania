@@ -1,7 +1,7 @@
-import { Action } from './Action/Action.tsx'
+import { Action } from './Action/Action'
 import { Comedy } from './Comedy/Comedy'
-import { Family } from './Family/Family.tsx'
-import { Fantastic } from './Fantastic/Fantastic.tsx'
+import { Family } from './Family/Family'
+import { Fantastic } from './Fantastic/Fantastic'
 import { GenresSlider } from './GenresSlider/GenresSlider'
 import styles from './Movies.module.scss'
 

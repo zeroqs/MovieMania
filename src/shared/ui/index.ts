@@ -1,3 +1,4 @@
+export { AutoComplete } from './AutoComplete/AutoComplete'
 export { Avatar } from './Avatar/Avatar'
 export { Button } from './Button/Button'
 export { Content } from './Content/Content'

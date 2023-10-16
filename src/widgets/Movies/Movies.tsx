@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom'
 import { useGetFilmsQuery } from '@/entities/Film'
 import { Button, MovieCard } from '@/shared/ui'
 
-import { genresOptions, sortOptions } from './lib/options.ts'
+import { genresOptions, sortOptions } from './lib/options'
 import styles from './Movies.module.scss'
 
 export const Movies = () => {

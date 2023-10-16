@@ -6,7 +6,7 @@ import { useGetFilmByGenreQuery } from '@/entities/Film'
 import { MovieCard, SliderControls, Typography } from '@/shared/ui'
 
 import { SLIDER_OPTIONS_LANDING } from '../../lib/ComedySliderOptions'
-import { loadingIcon } from '../../lib/Loading.tsx'
+import { loadingIcon } from '../../lib/Loading'
 
 export const Fantastic = () => {
   const { data, isSuccess, isLoading } = useGetFilmByGenreQuery('фантастика')

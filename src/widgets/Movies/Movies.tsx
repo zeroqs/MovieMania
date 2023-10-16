@@ -4,7 +4,7 @@ import { MdOutlineSort } from 'react-icons/md'
 import { useLocation } from 'react-router-dom'
 
 import { useGetFilmsQuery } from '@/entities/Film'
-import { MovieCard } from '@/shared/ui'
+import { Button, MovieCard } from '@/shared/ui'
 
 import { genresOptions, sortOptions } from './lib/options.ts'
 import styles from './Movies.module.scss'
@@ -12,9 +12,10 @@ import styles from './Movies.module.scss'
 export const Movies = () => {
   const { search } = useLocation()
   const searchParams = new URLSearchParams(search)
-  const test = searchParams.get('genre') || ''
+  const test = searchParams.get('genre') || 'Жанры'
   const [genre, setGenre] = useState(test)
   const [sort, setSort] = useState('votes.imdb')
+  const [pagination, setPagination] = useState(30)
   const handleGenre = (value: string) => {
     setGenre(value)
   }
@@ -22,9 +23,12 @@ export const Movies = () => {
     setSort(value)
   }
   const { data, isSuccess, isFetching } = useGetFilmsQuery({
-    genre,
+    genre: genre !== 'Жанры' ? genre : '',
     sort,
+    pagination,
   })
+
+  console.log(isFetching)
 
   return (
     <>
@@ -39,9 +43,9 @@ export const Movies = () => {
           }}
         >
           <Select
-            style={{ width: '160px' }}
-            placeholder="Жанры"
+            style={{ width: '180px' }}
             value={genre}
+            placeholder="Жанры"
             onChange={handleGenre}
             options={genresOptions}
             showSearch={false}
@@ -57,6 +61,15 @@ export const Movies = () => {
         </div>
       </header>
       <div className={styles.grid}>
+        {isSuccess &&
+          data.map((item, index) => (
+            <MovieCard
+              key={index}
+              filmTitle={item.name}
+              filmId={item.id}
+              filmRating={item.rating.imdb}
+            />
+          ))}
         {isFetching &&
           Array.from({ length: 10 }, (_, index) => (
             <div key={index} className={styles.loadingCard}>
@@ -68,17 +81,10 @@ export const Movies = () => {
               />
             </div>
           ))}
-
-        {isSuccess &&
-          data.map((item, index) => (
-            <MovieCard
-              key={index}
-              filmTitle={item.name}
-              filmId={item.id}
-              filmRating={item.rating.imdb}
-            />
-          ))}
       </div>
+      <Button onClick={() => setPagination((prevState) => (prevState += 30))}>
+        Показать больше
+      </Button>
     </>
   )
 }

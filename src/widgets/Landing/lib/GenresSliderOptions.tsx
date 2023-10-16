@@ -10,22 +10,45 @@ import { SwiperProps } from 'swiper/react'
 import { Genres as IGenres } from '@/entities/FilmsSlider'
 
 export const genres: IGenres[] = [
-  { name: 'Лучшие', icon: <GoTrophy style={{ fontSize: '20px' }} /> },
-  { name: 'Новые', icon: <AiOutlineFire style={{ fontSize: '20px' }} /> },
-  { name: 'Ужасы', icon: <PiKnifeDuotone style={{ fontSize: '20px' }} /> },
+  {
+    name: 'Лучшие',
+    icon: <GoTrophy style={{ fontSize: '20px' }} />,
+    value: 'лучшие',
+  },
+  {
+    name: 'Новые',
+    icon: <AiOutlineFire style={{ fontSize: '20px' }} />,
+    value: 'новые',
+  },
+  {
+    name: 'Ужасы',
+    icon: <PiKnifeDuotone style={{ fontSize: '20px' }} />,
+    value: 'ужасы',
+  },
   {
     name: 'Приключения',
     icon: <FiMap style={{ fontSize: '20px' }} />,
+    value: 'приключения',
   },
-  { name: 'Фантастика', icon: <RxRocket style={{ fontSize: '20px' }} /> },
-  { name: 'Семейные', icon: <MdFamilyRestroom style={{ fontSize: '20px' }} /> },
+  {
+    name: 'Фантастика',
+    icon: <RxRocket style={{ fontSize: '20px' }} />,
+    value: 'фантастика',
+  },
+  {
+    name: 'Семейные',
+    icon: <MdFamilyRestroom style={{ fontSize: '20px' }} />,
+    value: 'семейный',
+  },
   {
     name: 'Комедии',
     icon: <MdOutlineTheaterComedy style={{ fontSize: '20px' }} />,
+    value: 'комедия',
   },
   {
     name: 'Военные',
     icon: <GiMachineGunMagazine style={{ fontSize: '20px' }} />,
+    value: 'военный',
   },
 ]
 

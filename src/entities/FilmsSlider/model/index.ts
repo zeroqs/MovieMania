@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 export interface Genres {
   name: string
   icon?: ReactNode
+  value?: string
 }
 
 export interface IFilmSlider {

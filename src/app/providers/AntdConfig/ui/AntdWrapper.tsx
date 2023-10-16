@@ -21,7 +21,7 @@ const theme: ThemeConfig = {
     },
     Input: {
       colorBorder: '#545454',
-      colorText: '#545454',
+      colorText: '#fff',
       colorTextPlaceholder: '#545454',
     },
     Button: {

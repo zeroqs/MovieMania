@@ -64,14 +64,16 @@ export const Header = ({ className, ...otherProps }: HeaderProps) => {
           type="default"
           leftItem={<LeftOutlined />}
         />
-        <AutoComplete
-          onSelect={onSelect}
-          value={searchValue}
-          onChange={onChange}
-          className={styles.rightSide__input}
-          placeholder="Найти"
-          options={options}
-        />
+        <div style={{ width: '60%' }}>
+          <AutoComplete
+            onSelect={onSelect}
+            value={searchValue}
+            onChange={onChange}
+            className={styles.rightSide__input}
+            placeholder="Найти"
+            options={options}
+          />
+        </div>
       </div>
       <div className={styles.rightSide}>
         <Avatar size={54} icon={<UserOutlined />} />

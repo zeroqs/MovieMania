@@ -1,3 +1,3 @@
-# MovieMania
-🎬 Movie App 🎬
 🎉 main functionality done 🎉
+🎬 Movie App 🎬
+

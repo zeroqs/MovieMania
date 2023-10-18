@@ -61,7 +61,8 @@ export const Movies = () => {
         </div>
       </header>
       <div className={styles.grid}>
-        {isSuccess &&
+        {!isFetching &&
+          isSuccess &&
           data.map((item, index) => (
             <MovieCard
               key={index}

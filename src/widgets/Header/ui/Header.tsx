@@ -64,7 +64,7 @@ export const Header = ({ className, ...otherProps }: HeaderProps) => {
           type="default"
           leftItem={<LeftOutlined />}
         />
-        <div style={{ width: '60%' }}>
+        <div className={styles.search}>
           <AutoComplete
             onSelect={onSelect}
             value={searchValue}
